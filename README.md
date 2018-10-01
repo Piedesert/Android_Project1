@@ -1,7 +1,7 @@
 # Android_Project1
 Three games for multiple players, best two out of three wins!
 
-Milestone:
+Milestone:<br>
 In this milestone, your team should complete the following tasks as part of the final project.
 
 Finalized project proposal.
