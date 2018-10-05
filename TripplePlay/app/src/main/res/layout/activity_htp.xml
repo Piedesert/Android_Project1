@@ -7,6 +7,7 @@
     tools:context=".htpActivity">
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Button
         android:id="@+id/homeBTN"
         android:layout_width="wrap_content"
@@ -31,4 +32,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 >>>>>>> 84ed63774e0f80d6006b96d0d38154e88ddb62f6
+=======
+>>>>>>> parent of 46d43ab... Roughly connected all Activities
 </android.support.constraint.ConstraintLayout>

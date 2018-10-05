@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".rpsActivity">
 
+<<<<<<< HEAD
     <Button
 <<<<<<< HEAD
         android:id="@+id/htpBTN"
@@ -59,4 +60,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.15" />
 >>>>>>> 84ed63774e0f80d6006b96d0d38154e88ddb62f6
+=======
+>>>>>>> parent of 46d43ab... Roughly connected all Activities
 </android.support.constraint.ConstraintLayout>
