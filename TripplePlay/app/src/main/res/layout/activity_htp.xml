@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".htpActivity">
 
+<<<<<<< HEAD
     <Button
         android:id="@+id/homeBTN"
         android:layout_width="wrap_content"
@@ -17,4 +18,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.969" />
+=======
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="209dp"
+        android:layout_height="220dp"
+        android:text="Instructions on how to play the game"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+>>>>>>> 84ed63774e0f80d6006b96d0d38154e88ddb62f6
 </android.support.constraint.ConstraintLayout>
