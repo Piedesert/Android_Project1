@@ -27,16 +27,17 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent ini = new Intent(MainActivity.this, HangmanActivity.class);
                 Toast.makeText(MainActivity.this, "Time to Tripple Play!", Toast.LENGTH_SHORT).show();
-                startActivityForResult(ini, request_code);
+                startActivity(ini);
             }
         });
 
         // Start htpActivity
-        playBTN.setOnClickListener(new View.OnClickListener() {
+        htpBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent ini = new Intent(MainActivity.this, htpActivity.class);
-                startActivityForResult(ini, request_code);
+                Toast.makeText(MainActivity.this, "How To Play", Toast.LENGTH_SHORT).show();
+                startActivity(ini);
             }
         });
     }
