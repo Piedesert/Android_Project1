@@ -1,7 +1,9 @@
 package com.example.s527839.trippleplay;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 public class rpsActivity extends AppCompatActivity {
 
@@ -9,5 +11,10 @@ public class rpsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rps);
+    }
+    //Goes back to Start Screen on click
+    public void onClickSS(View v){
+        Intent ini = new Intent(v.getContext(), MainActivity.class);
+        startActivityForResult(ini, 1);
     }
 }

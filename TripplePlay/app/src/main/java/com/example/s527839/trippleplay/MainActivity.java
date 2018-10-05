@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Start htpActivity
-        playBTN.setOnClickListener(new View.OnClickListener() {
+        htpBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent ini = new Intent(MainActivity.this, htpActivity.class);
