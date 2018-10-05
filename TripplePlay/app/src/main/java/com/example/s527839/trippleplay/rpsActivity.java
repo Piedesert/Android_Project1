@@ -27,8 +27,8 @@ public class rpsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_rps);
     }
     //Goes back to Start Screen on click
-    public void onClickSB(View v){
-        Intent ini = new Intent(v.getContext(), scoreActivity.class);
+    public void onClickSS(View v){
+        Intent ini = new Intent(v.getContext(), MainActivity.class);
         startActivityForResult(ini, 1);
     }
 }
