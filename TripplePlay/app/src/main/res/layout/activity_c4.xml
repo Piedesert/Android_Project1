@@ -195,7 +195,7 @@
         android:layout_width="319dp"
         android:layout_height="103dp"
         android:gravity="center"
-        android:text="Welcome to 4 in a row"
+        android:text="Welcome to connect 4"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textColor="@color/colorPrimary"
         android:textSize="30dp"
