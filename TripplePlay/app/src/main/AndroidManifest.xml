@@ -19,7 +19,8 @@
         <activity android:name=".HangmanActivity" />
         <activity android:name=".rpsActivity" />
         <activity android:name=".C4Activity" />
-        <activity android:name=".htpActivity"></activity>
+        <activity android:name=".htpActivity" />
+        <activity android:name=".scoreActivity"></activity>
     </application>
 
 </manifest>

@@ -5,16 +5,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class rpsActivity extends AppCompatActivity {
+public class scoreActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rps);
+        setContentView(R.layout.activity_score);
     }
-    //Goes back to Start Screen on click
-    public void onClickSB(View v){
-        Intent ini = new Intent(v.getContext(), scoreActivity.class);
+
+    public void onClickSS(View v){
+        Intent ini = new Intent(v.getContext(), MainActivity.class);
         startActivityForResult(ini, 1);
     }
 }
