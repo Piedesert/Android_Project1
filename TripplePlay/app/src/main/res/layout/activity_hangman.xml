@@ -19,10 +19,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.14" />
-<<<<<<< HEAD
 
     <Button
-<<<<<<< HEAD
         android:id="@+id/nextBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -45,19 +43,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.03" />
-=======
-        android:id="@+id/nextActivity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Go to Connect 4"
-        android:onClick="onClickC4"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.824"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.811" />
->>>>>>> 84ed63774e0f80d6006b96d0d38154e88ddb62f6
-=======
->>>>>>> parent of 46d43ab... Roughly connected all Activities
 </android.support.constraint.ConstraintLayout>

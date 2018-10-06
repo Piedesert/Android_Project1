@@ -6,9 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".rpsActivity">
 
-<<<<<<< HEAD
     <Button
-<<<<<<< HEAD
         android:id="@+id/htpBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,33 +31,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.969" />
 
-=======
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Go back to Start Screen"
-        android:onClick="onClickSS"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.814"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.89" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="310dp"
-        android:layout_height="65dp"
-        android:text="Rock Paper Scissors game"
-        android:textColor="@color/colorPrimary"
-        android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.15" />
->>>>>>> 84ed63774e0f80d6006b96d0d38154e88ddb62f6
-=======
->>>>>>> parent of 46d43ab... Roughly connected all Activities
 </android.support.constraint.ConstraintLayout>
