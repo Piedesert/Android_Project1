@@ -43,16 +43,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/s527839/trippleplay/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+            <state relative-caret-position="136">
+              <caret line="13" column="18" lean-forward="true" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+              <folding>
+                <element signature="e#739#1077#0" expanded="true" />
+                <element signature="e#1076#1077#0" expanded="true" />
+                <element signature="e#1144#1468#0" expanded="true" />
+                <element signature="e#1467#1468#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_hangman.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="activity_hangman.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_hangman.xml">
           <provider editor-type-id="text-editor">
             <state relative-caret-position="544">
@@ -68,7 +74,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/s527839/trippleplay/HangmanActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -2357,11 +2363,11 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/s527839/trippleplay/htpActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/s527839/trippleplay/rpsActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_rps.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/s527839/trippleplay/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_hangman.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_score.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/s527839/trippleplay/ScoreActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_htp.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/s527839/trippleplay/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -2531,7 +2537,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info anchor="bottom" id="Android Profiler" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Android Profiler" order="12" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info id="Image Layers" order="7" />
@@ -2619,6 +2625,11 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/s527839/trippleplay/htpActivity.java">
@@ -2794,6 +2805,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="82">
           <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+          <folding>
+            <element signature="e#739#1077#0" expanded="true" />
+            <element signature="e#1076#1077#0" expanded="true" />
+            <element signature="e#1144#1468#0" expanded="true" />
+            <element signature="e#1467#1468#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2968,7 +2985,7 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/s527839/trippleplay/HangmanActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
@@ -3027,13 +3044,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/s527839/trippleplay/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_hangman.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="544">
@@ -3042,6 +3052,19 @@
       </provider>
       <provider selected="true" editor-type-id="android-designer2">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/s527839/trippleplay/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="13" column="18" lean-forward="true" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+          <folding>
+            <element signature="e#739#1077#0" expanded="true" />
+            <element signature="e#1076#1077#0" expanded="true" />
+            <element signature="e#1144#1468#0" expanded="true" />
+            <element signature="e#1467#1468#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>
