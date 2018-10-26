@@ -12,7 +12,7 @@
         android:layout_height="46dp"
         android:fontFamily="monospace"
         android:lineSpacingExtra="18sp"
-        android:text="Hangman"
+        android:text="@string/titleTV"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,7 +25,7 @@
         android:id="@+id/htpBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="How To Play"
+        android:text="@string/htpBTN"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.985"
@@ -41,13 +41,13 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Guess"
+        android:text="@string/guessBTN"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.971"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.821" />
+        app:layout_constraintVertical_bias="0.901" />
 
     <EditText
         android:id="@+id/guessET"
@@ -58,30 +58,29 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
-        android:hint="Guess a letter"
+        android:hint="@string/guessLetterET"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.189"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.821" />
+        app:layout_constraintVertical_bias="0.902" />
 
-    <fragment
-        android:id="@+id/nextGameFrag"
-        android:name="com.example.s527839.trippleplay.NextGameFragment"
+    <Button
+        android:id="@+id/nextBTN"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_height="47dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:text="@string/nextBTN"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.972"
+        app:layout_constraintHorizontal_bias="0.945"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.945" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <FrameLayout
         android:id="@+id/nooseFrame"
@@ -97,5 +96,54 @@
         app:layout_constraintVertical_bias="0.214">
 
     </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/guessWordLayout"
+        android:layout_width="385dp"
+        android:layout_height="82dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.734">
+
+        <TextView
+            android:id="@+id/guessSpace0TV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/guessSpace0TV" />
+
+        <TextView
+            android:id="@+id/guessSpace1TV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/guessSpace1TV" />
+
+        <TextView
+            android:id="@+id/guessSpace2TV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/guessSpace2TV" />
+
+        <TextView
+            android:id="@+id/guessSpace3TV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/guessSpace3TV" />
+
+        <TextView
+            android:id="@+id/guessSpace4TV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/guessSpace4TV" />
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

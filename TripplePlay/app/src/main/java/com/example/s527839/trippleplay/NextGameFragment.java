@@ -11,6 +11,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.s527839.trippleplay.R;
+import com.example.s527839.trippleplay.C4Activity;
+
 
 /**
  * A simple {@link Fragment} subclass.

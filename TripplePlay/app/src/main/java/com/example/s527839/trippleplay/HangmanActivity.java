@@ -11,9 +11,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public abstract class HangmanActivity extends AppCompatActivity {
-// Hangman
+import com.example.s527839.trippleplay.R;
+import com.example.s527839.trippleplay.htpActivity;
+import com.example.s527839.trippleplay.Hangman0Frag;
+import com.example.s527839.trippleplay.Hangman1Frag;
+import com.example.s527839.trippleplay.Hangman2Frag;
+import com.example.s527839.trippleplay.Hangman3Frag;
+import com.example.s527839.trippleplay.Hangman4Frag;
+import com.example.s527839.trippleplay.Hangman5Frag;
+import com.example.s527839.trippleplay.Hangman6Frag;
 
+public class HangmanActivity extends AppCompatActivity {
+// Hangman
+/*
     private static String SAVED_ONFRAGMENT = "OnFragment";
     private static String SAVED_HANG0_FRAG = "Hang0Fragment";
     private static String SAVED_HANG1_FRAG = "Hang1Fragment";
@@ -30,7 +40,7 @@ public abstract class HangmanActivity extends AppCompatActivity {
     private Hangman4Frag h4IMG;
     private Hangman5Frag h5IMG;
     private Hangman6Frag h6IMG;
-
+*/
     Button nextBTN;
     Button htpBTN;
     private static final int request_code = 1;
@@ -39,7 +49,7 @@ public abstract class HangmanActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hangman);
-
+/*
         if(savedInstanceState!=null){
             // We are being restored, so we need to take care of our instance variables.
             Log.d("Restored", "Recreating my instance variables");
@@ -69,20 +79,20 @@ public abstract class HangmanActivity extends AppCompatActivity {
         // Add to use hide/show to swap
         FragmentTransaction t = getSupportFragmentManager().beginTransaction();
         t.add(R.id.nooseFrame, h6IMG);
-        t.add(R.id.nooseFrame, h5IMG);
-        t.add(R.id.nooseFrame, h4IMG);
-        t.add(R.id.nooseFrame, h3IMG);
-        t.add(R.id.nooseFrame, h2IMG);
-        t.add(R.id.nooseFrame, h1IMG);
         t.hide(h6IMG);
+        t.add(R.id.nooseFrame, h5IMG);
         t.hide(h5IMG);
+        t.add(R.id.nooseFrame, h4IMG);
         t.hide(h4IMG);
+        t.add(R.id.nooseFrame, h3IMG);
         t.hide(h3IMG);
+        t.add(R.id.nooseFrame, h2IMG);
         t.hide(h2IMG);
+        t.add(R.id.nooseFrame, h1IMG);
         t.hide(h1IMG);
         t.add(R.id.nooseFrame, h0IMG);
         t.commit();
-
+*/
         nextBTN = (Button) findViewById(R.id.nextBTN);
         htpBTN = (Button) findViewById(R.id.htpBTN);
 
@@ -106,6 +116,23 @@ public abstract class HangmanActivity extends AppCompatActivity {
             }
         });
 
+    }
+/*
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        // put my private state variables into the bundle
+        outState.putInt(SAVED_ONFRAGMENT, onFragment);
+
+        // Save the fragments in the bundle using the fragment manager
+        getSupportFragmentManager().putFragment(outState, SAVED_HANG0_FRAG, h0IMG);
+        getSupportFragmentManager().putFragment(outState, SAVED_HANG1_FRAG, h1IMG);
+        getSupportFragmentManager().putFragment(outState, SAVED_HANG2_FRAG, h2IMG);
+        getSupportFragmentManager().putFragment(outState, SAVED_HANG3_FRAG, h3IMG);
+        getSupportFragmentManager().putFragment(outState, SAVED_HANG4_FRAG, h4IMG);
+        getSupportFragmentManager().putFragment(outState, SAVED_HANG5_FRAG, h5IMG);
+        getSupportFragmentManager().putFragment(outState, SAVED_HANG6_FRAG, h6IMG);
     }
 
     public void swapNoose() {
@@ -153,6 +180,6 @@ public abstract class HangmanActivity extends AppCompatActivity {
             //gameOver();
         }
 
-    }
+    }*/
 
 }

@@ -7,6 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.s527839.trippleplay.R;
+import com.example.s527839.trippleplay.MainActivity;
+import com.example.s527839.trippleplay.htpActivity;
+
 public class rpsActivity extends AppCompatActivity {
 // Rock, Paper, Scissors
 
