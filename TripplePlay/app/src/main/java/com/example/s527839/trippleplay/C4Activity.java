@@ -8,9 +8,12 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-<<<<<<< HEAD
+import com.example.s527839.trippleplay.R;
+import com.example.s527839.trippleplay.htpActivity;
+import com.example.s527839.trippleplay.rpsActivity;
+
 public class C4Activity extends AppCompatActivity implements View.OnClickListener {
-    // Connect Four
+// Connect Four
     Button nextBTN;
     Button htpBTN;
     private static final int request_code = 1;
