@@ -6,6 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+import android.app.ActionBar.*;
+
+import com.example.s527839.trippleplay.HangmanActivity;
+import com.example.s527839.trippleplay.R;
+import com.example.s527839.trippleplay.htpActivity;
 
 public class MainActivity extends AppCompatActivity {
 // Main Menu
@@ -43,4 +48,5 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
 }

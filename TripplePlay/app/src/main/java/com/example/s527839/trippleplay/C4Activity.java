@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+<<<<<<< HEAD
 public class C4Activity extends AppCompatActivity implements View.OnClickListener {
     // Connect Four
     Button nextBTN;

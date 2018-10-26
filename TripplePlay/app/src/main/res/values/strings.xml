@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">TripplePlay</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nextBTN">Next</string>
+    <string name="noose0IMG">noose0</string>
+    <string name="noose1IMG">noose1</string>
+    <string name="noose2IMG">noose2</string>
+    <string name="noose3IMG">noose3</string>
+    <string name="noose4IMG">noose4</string>
+    <string name="noose5IMG">noose5</string>
+    <string name="noose6IMG">noose6</string>
+    <string name="guessLetterET">Guess a letter</string>
+    <string name="guessBTN">Guess</string>
+    <string name="htpBTN">How To Play</string>
+    <string name="titleTV">Hangman</string>
+    <string name="guessSpace0TV">_</string>
+    <string name="guessSpace1TV">_</string>
+    <string name="guessSpace2TV">_</string>
+    <string name="guessSpace3TV">_</string>
+    <string name="guessSpace4TV">_</string>
 </resources>

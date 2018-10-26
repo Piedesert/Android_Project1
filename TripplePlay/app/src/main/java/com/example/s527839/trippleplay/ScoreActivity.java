@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.s527839.trippleplay.R;
+
 public class ScoreActivity extends AppCompatActivity {
 
     @Override
