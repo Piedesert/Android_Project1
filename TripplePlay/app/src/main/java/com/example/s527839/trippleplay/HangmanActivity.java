@@ -1,15 +1,35 @@
 package com.example.s527839.trippleplay;
 
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.app.ActionBar.*;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class HangmanActivity extends AppCompatActivity {
+public abstract class HangmanActivity extends AppCompatActivity {
 // Hangman
+
+    private static String SAVED_ONFRAGMENT = "OnFragment";
+    private static String SAVED_HANG0_FRAG = "Hang0Fragment";
+    private static String SAVED_HANG1_FRAG = "Hang1Fragment";
+    private static String SAVED_HANG2_FRAG = "Hang2Fragment";
+    private static String SAVED_HANG3_FRAG = "Hang3Fragment";
+    private static String SAVED_HANG4_FRAG = "Hang4Fragment";
+    private static String SAVED_HANG5_FRAG = "Hang5Fragment";
+    private static String SAVED_HANG6_FRAG = "Hang6Fragment";
+    private int onFragment = 1;
+    private Hangman0Frag h0IMG;
+    private Hangman1Frag h1IMG;
+    private Hangman2Frag h2IMG;
+    private Hangman3Frag h3IMG;
+    private Hangman4Frag h4IMG;
+    private Hangman5Frag h5IMG;
+    private Hangman6Frag h6IMG;
 
     Button nextBTN;
     Button htpBTN;
@@ -19,6 +39,49 @@ public class HangmanActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hangman);
+
+        if(savedInstanceState!=null){
+            // We are being restored, so we need to take care of our instance variables.
+            Log.d("Restored", "Recreating my instance variables");
+            onFragment = savedInstanceState.getInt(SAVED_ONFRAGMENT);
+
+            // Use the Fragment Manager to save the fragments that are in use.
+            FragmentManager manager = getSupportFragmentManager();
+            h0IMG = (Hangman0Frag) manager.getFragment(savedInstanceState, SAVED_HANG0_FRAG);
+            h1IMG = (Hangman1Frag) manager.getFragment(savedInstanceState, SAVED_HANG1_FRAG);
+            h2IMG = (Hangman2Frag) manager.getFragment(savedInstanceState, SAVED_HANG2_FRAG);
+            h3IMG = (Hangman3Frag) manager.getFragment(savedInstanceState, SAVED_HANG3_FRAG);
+            h4IMG = (Hangman4Frag) manager.getFragment(savedInstanceState, SAVED_HANG4_FRAG);
+            h5IMG = (Hangman5Frag) manager.getFragment(savedInstanceState, SAVED_HANG5_FRAG);
+            h6IMG = (Hangman6Frag) manager.getFragment(savedInstanceState, SAVED_HANG6_FRAG);
+            return;
+        }
+
+        // First Time must create and add the fragments
+        h0IMG = new Hangman0Frag();
+        h1IMG = new Hangman1Frag();
+        h2IMG = new Hangman2Frag();
+        h3IMG = new Hangman3Frag();
+        h4IMG = new Hangman4Frag();
+        h5IMG = new Hangman5Frag();
+        h6IMG = new Hangman6Frag();
+
+        // Add to use hide/show to swap
+        FragmentTransaction t = getSupportFragmentManager().beginTransaction();
+        t.add(R.id.nooseFrame, h6IMG);
+        t.add(R.id.nooseFrame, h5IMG);
+        t.add(R.id.nooseFrame, h4IMG);
+        t.add(R.id.nooseFrame, h3IMG);
+        t.add(R.id.nooseFrame, h2IMG);
+        t.add(R.id.nooseFrame, h1IMG);
+        t.hide(h6IMG);
+        t.hide(h5IMG);
+        t.hide(h4IMG);
+        t.hide(h3IMG);
+        t.hide(h2IMG);
+        t.hide(h1IMG);
+        t.add(R.id.nooseFrame, h0IMG);
+        t.commit();
 
         nextBTN = (Button) findViewById(R.id.nextBTN);
         htpBTN = (Button) findViewById(R.id.htpBTN);
@@ -43,6 +106,52 @@ public class HangmanActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void swapNoose() {
+        if (onFragment == 1) {
+            FragmentTransaction t = getSupportFragmentManager().beginTransaction();
+            t.hide(h0IMG);
+            t.show(h1IMG);
+            t.commit();
+            onFragment = 2;
+        }
+        if (onFragment == 2) {
+            FragmentTransaction t = getSupportFragmentManager().beginTransaction();
+            t.hide(h1IMG);
+            t.show(h2IMG);
+            t.commit();
+            onFragment = 3;
+        }
+        if (onFragment == 3) {
+            FragmentTransaction t = getSupportFragmentManager().beginTransaction();
+            t.hide(h2IMG);
+            t.show(h3IMG);
+            t.commit();
+            onFragment = 4;
+        }
+        if (onFragment == 4) {
+            FragmentTransaction t = getSupportFragmentManager().beginTransaction();
+            t.hide(h3IMG);
+            t.show(h4IMG);
+            t.commit();
+            onFragment = 4;
+        }
+        if (onFragment == 5) {
+            FragmentTransaction t = getSupportFragmentManager().beginTransaction();
+            t.hide(h4IMG);
+            t.show(h5IMG);
+            t.commit();
+            onFragment = 6;
+        }
+        if (onFragment == 6) {
+            FragmentTransaction t = getSupportFragmentManager().beginTransaction();
+            t.hide(h5IMG);
+            t.show(h6IMG);
+            t.commit();
+            onFragment = 0;
+            //gameOver();
+        }
 
     }
 

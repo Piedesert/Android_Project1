@@ -1,6 +1,7 @@
 package com.example.s527839.trippleplay;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -17,8 +18,19 @@ import android.widget.Toast;
 public class NextGameFragment extends Fragment {
 
 
+    public interface NextGame {
+        public void nextGame();
+    }
+
     public NextGameFragment() {
         // Required empty public constructor
+    }
+
+    private NextGameFragment.NextGame myActivity;
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
     }
 
 
