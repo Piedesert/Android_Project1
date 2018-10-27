@@ -89,6 +89,7 @@ public class C4Activity extends AppCompatActivity implements View.OnClickListene
             public void onClick(View v) {
                 Intent ini = new Intent(C4Activity.this, rpsActivity.class);
                 Toast.makeText(C4Activity.this, "Rock, Paper, Scissors", Toast.LENGTH_SHORT).show();
+                gameResult();
                 Intent scoreSend = new Intent(C4Activity.this, ScoreActivity.class);
                 scoreSend.putExtra("c4Result", result);
                 setResult(2,scoreSend);

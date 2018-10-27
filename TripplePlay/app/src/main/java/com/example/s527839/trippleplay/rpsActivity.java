@@ -34,6 +34,7 @@ public class rpsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent ini = new Intent(rpsActivity.this, MainActivity.class);
                 Toast.makeText(rpsActivity.this, "Home", Toast.LENGTH_SHORT).show();
+                gameResult();
                 Intent scoreSend = new Intent(rpsActivity.this, ScoreActivity.class);
                 scoreSend.putExtra("hangmanResult", result);
                 setResult(3,scoreSend);

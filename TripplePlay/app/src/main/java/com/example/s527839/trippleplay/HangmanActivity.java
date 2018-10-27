@@ -106,6 +106,7 @@ public class HangmanActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent ini = new Intent(HangmanActivity.this, C4Activity.class);
                 Toast.makeText(HangmanActivity.this, "Connect Four", Toast.LENGTH_SHORT).show();
+                gameResult();
                 Intent scoreSend = new Intent(HangmanActivity.this, ScoreActivity.class);
                 scoreSend.putExtra("hangmanResult", result);
                 setResult(1,scoreSend);
