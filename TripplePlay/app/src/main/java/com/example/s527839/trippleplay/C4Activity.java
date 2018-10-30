@@ -8,15 +8,12 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.example.s527839.trippleplay.R;
-import com.example.s527839.trippleplay.htpActivity;
-import com.example.s527839.trippleplay.rpsActivity;
-
 public class C4Activity extends AppCompatActivity implements View.OnClickListener {
-// Connect Four
+    // Connect Four
     Button nextBTN;
     Button htpBTN;
     private static final int request_code = 1;
+    int user = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -131,82 +128,356 @@ public class C4Activity extends AppCompatActivity implements View.OnClickListene
         Button reset = findViewById(R.id.resetBTN);
         switch (v.getId()) {
             case R.id.row1col1:
-                //call function here
+                if(user%2 == 0)
+                {
+                    row1col1.setImageResource(R.drawable.redchecker);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    row1col1.setImageResource(R.drawable.bluesquare2);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                user++;
                 break;
             case R.id.row1col2:
-                //call function here
+
+                if(user%2 == 0)
+                {
+                    row1col2.setImageResource(R.drawable.redchecker);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    row1col2.setImageResource(R.drawable.bluesquare2);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                user++;
                 break;
             case R.id.row1col3:
-                //call function here
+
+                if(user%2 == 0)
+                {
+                    row1col3.setImageResource(R.drawable.redchecker);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    row1col3.setImageResource(R.drawable.bluesquare2);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                user++;
                 break;
             case R.id.row1col4:
-                //call function here
+
+                if(user%2 == 0)
+                {
+                    row1col4.setImageResource(R.drawable.redchecker);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    row1col4.setImageResource(R.drawable.bluesquare2);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                user++;
                 break;
             case R.id.row1col5:
-                //call function here
+
+                if(user%2 == 0)
+                {
+                    row1col5.setImageResource(R.drawable.redchecker);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    row1col5.setImageResource(R.drawable.bluesquare2);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                user++;
                 break;
             case R.id.row2col1:
-                //call function here
+
+                if(user%2 == 0)
+                {
+                    row2col1.setImageResource(R.drawable.redchecker);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    row2col1.setImageResource(R.drawable.bluesquare2);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                user++;
                 break;
             case R.id.row2col2:
-                //call function here
+
+                if(user%2 == 0)
+                {
+                    row2col2.setImageResource(R.drawable.redchecker);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    row2col2.setImageResource(R.drawable.bluesquare2);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                user++;
                 break;
             case R.id.row2col3:
-                //call function here
+
+                if(user%2 == 0)
+                {
+                    row2col3.setImageResource(R.drawable.redchecker);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    row2col3.setImageResource(R.drawable.bluesquare2);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                user++;
                 break;
             case R.id.row2col4:
-                //call function here
+
+                if(user%2 == 0)
+                {
+                    row2col4.setImageResource(R.drawable.redchecker);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    row2col4.setImageResource(R.drawable.bluesquare2);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                user++;
                 break;
             case R.id.row2col5:
-                //call function here
+
+                if(user%2 == 0)
+                {
+                    row2col5.setImageResource(R.drawable.redchecker);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    row2col5.setImageResource(R.drawable.bluesquare2);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                user++;
                 break;
             case R.id.row3col1:
-                //call function here
+
+                if(user%2 == 0)
+                {
+                    row3col1.setImageResource(R.drawable.redchecker);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    row3col1.setImageResource(R.drawable.bluesquare2);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                user++;
                 break;
             case R.id.row3col2:
-                //call function here
+
+                if(user%2 == 0)
+                {
+                    row3col2.setImageResource(R.drawable.redchecker);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    row3col2.setImageResource(R.drawable.bluesquare2);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                user++;
                 break;
             case R.id.row3col3:
-                //call function here
+
+                if(user%2 == 0)
+                {
+                    row3col3.setImageResource(R.drawable.redchecker);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    row3col3.setImageResource(R.drawable.bluesquare2);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                user++;
                 break;
             case R.id.row3col4:
-                //call function here
+
+                if(user%2 == 0)
+                {
+                    row3col4.setImageResource(R.drawable.redchecker);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    row3col4.setImageResource(R.drawable.bluesquare2);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                user++;
                 break;
             case R.id.row3col5:
-                //call function here
+
+                if(user%2 == 0)
+                {
+                    row3col5.setImageResource(R.drawable.redchecker);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    row3col5.setImageResource(R.drawable.bluesquare2);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                user++;
                 break;
             case R.id.row4col1:
-                //call function here
+
+                if(user%2 == 0)
+                {
+                    row4col1.setImageResource(R.drawable.redchecker);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    row4col1.setImageResource(R.drawable.bluesquare2);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                user++;
                 break;
             case R.id.row4col2:
-                //call function here
+
+                if(user%2 == 0)
+                {
+                    row4col2.setImageResource(R.drawable.redchecker);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    row4col2.setImageResource(R.drawable.bluesquare2);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                user++;
                 break;
             case R.id.row4col3:
-                //call function here
+
+                if(user%2 == 0)
+                {
+                    row4col3.setImageResource(R.drawable.redchecker);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    row4col3.setImageResource(R.drawable.bluesquare2);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                user++;
                 break;
             case R.id.row4col4:
-                //call function here
+
+                if(user%2 == 0)
+                {
+                    row4col4.setImageResource(R.drawable.redchecker);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    row4col4.setImageResource(R.drawable.bluesquare2);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                user++;
                 break;
             case R.id.row4col5:
-                //call function here
+
+                if(user%2 == 0)
+                {
+                    row4col5.setImageResource(R.drawable.redchecker);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    row4col5.setImageResource(R.drawable.bluesquare2);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                user++;
                 break;
             case R.id.row5col1:
-                //call function here
+
+                if(user%2 == 0)
+                {
+                    row5col1.setImageResource(R.drawable.redchecker);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    row5col1.setImageResource(R.drawable.bluesquare2);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                user++;
                 break;
             case R.id.row5col2:
-                //call function here
+
+                if(user%2 == 0)
+                {
+                    row5col2.setImageResource(R.drawable.redchecker);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    row5col2.setImageResource(R.drawable.bluesquare2);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                user++;
                 break;
             case R.id.row5col3:
-                //call function here
+
+                if(user%2 == 0)
+                {
+                    row5col3.setImageResource(R.drawable.redchecker);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    row5col3.setImageResource(R.drawable.bluesquare2);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                user++;
                 break;
             case R.id.row5col4:
-                //call function here
+
+                if(user%2 == 0)
+                {
+                    row5col4.setImageResource(R.drawable.redchecker);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    row5col4.setImageResource(R.drawable.bluesquare2);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                user++;
                 break;
             case R.id.row5col5:
-                //call function here
+
+                if(user%2 == 0)
+                {
+                    row5col5.setImageResource(R.drawable.redchecker);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    row5col5.setImageResource(R.drawable.bluesquare2);
+                    Toast.makeText(getApplicationContext(), "Player Two's Turn", Toast.LENGTH_SHORT).show();
+                }
+                user++;
                 break;
             case R.id.resetBTN:
-                //call function here
+
                 break;
 
 
