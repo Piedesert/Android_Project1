@@ -22,6 +22,10 @@ import com.example.s527839.trippleplay.Hangman5Frag;
 import com.example.s527839.trippleplay.Hangman6Frag;
 
 public class HangmanActivity extends AppCompatActivity {
+
+    String player;
+    String winningPlayer;
+    String result;
 // Hangman
 /*
     private static String SAVED_ONFRAGMENT = "OnFragment";
@@ -102,6 +106,11 @@ public class HangmanActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent ini = new Intent(HangmanActivity.this, C4Activity.class);
                 Toast.makeText(HangmanActivity.this, "Connect Four", Toast.LENGTH_SHORT).show();
+                gameResult();
+                Intent scoreSend = new Intent(HangmanActivity.this, ScoreActivity.class);
+                scoreSend.putExtra("hangmanResult", result);
+                setResult(1,scoreSend);
+                finish();
                 startActivity(ini);
             }
         });
@@ -181,5 +190,10 @@ public class HangmanActivity extends AppCompatActivity {
         }
 
     }*/
+
+    public void gameResult(){
+        Toast.makeText(HangmanActivity.this,"Player " + winningPlayer + " wins!",Toast.LENGTH_LONG).show();
+        result = winningPlayer;
+}
 
 }

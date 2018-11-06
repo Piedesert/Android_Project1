@@ -12,6 +12,9 @@ public class C4Activity extends AppCompatActivity implements View.OnClickListene
     // Connect Four
     Button nextBTN;
     Button htpBTN;
+    String result;
+    String player;
+    String winningPlayer;
     private static final int request_code = 1;
     int user = 2;
 
@@ -83,6 +86,11 @@ public class C4Activity extends AppCompatActivity implements View.OnClickListene
             public void onClick(View v) {
                 Intent ini = new Intent(C4Activity.this, rpsActivity.class);
                 Toast.makeText(C4Activity.this, "Rock, Paper, Scissors", Toast.LENGTH_SHORT).show();
+                gameResult();
+                Intent scoreSend = new Intent(C4Activity.this, ScoreActivity.class);
+                scoreSend.putExtra("c4Result", result);
+                setResult(2,scoreSend);
+                finish();
                 startActivity(ini);
             }
         });
@@ -487,6 +495,11 @@ public class C4Activity extends AppCompatActivity implements View.OnClickListene
     public void imagePicker(int userCount)
     {
 
+    }
+
+    public void gameResult(){
+        Toast.makeText(C4Activity.this,"Player " + winningPlayer + " wins!",Toast.LENGTH_LONG).show();
+        result = winningPlayer;
     }
 
     public void reset(){

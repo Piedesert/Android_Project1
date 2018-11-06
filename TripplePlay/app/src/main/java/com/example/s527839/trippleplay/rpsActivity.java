@@ -16,6 +16,9 @@ public class rpsActivity extends AppCompatActivity {
 
     Button htpBTN;
     Button homeBTN;
+    String result;
+    String player;
+    String winningPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,11 @@ public class rpsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent ini = new Intent(rpsActivity.this, MainActivity.class);
                 Toast.makeText(rpsActivity.this, "Home", Toast.LENGTH_SHORT).show();
+                gameResult();
+                Intent scoreSend = new Intent(rpsActivity.this, ScoreActivity.class);
+                scoreSend.putExtra("hangmanResult", result);
+                setResult(3,scoreSend);
+                finish();
                 startActivity(ini);
             }
         });
@@ -44,5 +52,10 @@ public class rpsActivity extends AppCompatActivity {
                 startActivity(ini);
             }
         });
+    }
+
+    public void gameResult(){
+        Toast.makeText(rpsActivity.this,"Player " + winningPlayer + " wins!",Toast.LENGTH_LONG).show();
+        result = winningPlayer;
     }
 }
