@@ -1,7 +1,7 @@
 # Android_Project1
 Three games for multiple players, best two out of three wins!
 
-Project Proposal Nick Morrow, Luke Carlson, Jordan Zech and Colton Steeve App name local food delivery service
+Project Proposal Nick Morrow, Luke Carlson, Jordan Zech and Colton Steeve App name Tripple Play
 
 <p>Hangman/Connect 4/Rock Paper Scissors app<p>
 <p>Activity 1(Hang Man): Lets a user enter in a word that the other user has to guess 1 character at a time. After this user has entered the winning characters. It would go to a new page hiding the word chosen. Let’s the second user pick a character A-Z trying to guess the correct word the first user has chosen. If you choose a wrong character a part of a stick figure character would be draw. If you choose the correct character the letter will be filled into the blank. _ A _ _ something like that. If the stick figure person is complete than you lose the game and the word is filled in.<p>
