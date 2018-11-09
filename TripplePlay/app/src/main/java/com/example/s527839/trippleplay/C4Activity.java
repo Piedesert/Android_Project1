@@ -17,6 +17,11 @@ public class C4Activity extends AppCompatActivity implements View.OnClickListene
     String winningPlayer;
     private static final int request_code = 1;
     int user = 2;
+    ImageButton row1col1, row1col2, row1col3, row1col4, row1col5,
+            row2col1, row2col2, row2col3, row2col4, row2col5,
+            row3col1, row3col2, row3col3, row3col4, row3col5,
+            row4col1, row4col2, row4col3, row4col4, row4col5,
+            row5col1, row5col2, row5col3, row5col4, row5col5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,31 +113,7 @@ public class C4Activity extends AppCompatActivity implements View.OnClickListene
 
     @Override
     public void onClick(View v) {
-        ImageButton row1col1 = findViewById(R.id.row1col1);
-        ImageButton row1col2 = findViewById(R.id.row1col2);
-        ImageButton row1col3 = findViewById(R.id.row1col3);
-        ImageButton row1col4 = findViewById(R.id.row1col4);
-        ImageButton row1col5 = findViewById(R.id.row1col5);
-        ImageButton row2col1 = findViewById(R.id.row2col1);
-        ImageButton row2col2 = findViewById(R.id.row2col2);
-        ImageButton row2col3 = findViewById(R.id.row2col3);
-        ImageButton row2col4 = findViewById(R.id.row2col4);
-        ImageButton row2col5 = findViewById(R.id.row2col5);
-        ImageButton row3col1 = findViewById(R.id.row3col1);
-        ImageButton row3col2 = findViewById(R.id.row3col2);
-        ImageButton row3col3 = findViewById(R.id.row3col3);
-        ImageButton row3col4 = findViewById(R.id.row3col4);
-        ImageButton row3col5 = findViewById(R.id.row3col5);
-        ImageButton row4col1 = findViewById(R.id.row4col1);
-        ImageButton row4col2 = findViewById(R.id.row4col2);
-        ImageButton row4col3 = findViewById(R.id.row4col3);
-        ImageButton row4col4 = findViewById(R.id.row4col4);
-        ImageButton row4col5 = findViewById(R.id.row4col5);
-        ImageButton row5col1 = findViewById(R.id.row5col1);
-        ImageButton row5col2 = findViewById(R.id.row5col2);
-        ImageButton row5col3 = findViewById(R.id.row5col3);
-        ImageButton row5col4 = findViewById(R.id.row5col4);
-        ImageButton row5col5 = findViewById(R.id.row5col5);
+       
         Button reset = findViewById(R.id.resetBTN);
         switch (v.getId()) {
             case R.id.row1col1:
