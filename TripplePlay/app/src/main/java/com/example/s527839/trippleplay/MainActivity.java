@@ -18,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
     Button playBTN;
     Button htpBTN;
     private static final int request_code = 1;
-
+    public static int user1;
+    public static int user2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

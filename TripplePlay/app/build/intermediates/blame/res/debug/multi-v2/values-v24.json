@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\s521476\\AndroidStudioProjects\\TripplePlayAndriodProject\\Android_Project1\\TripplePlay\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
+            "outputFile": "C:\\Users\\s518813\\Documents\\GitHub\\Android_Project1\\TripplePlay\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\s521476\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-28.0.0.aar\\e114d637861b4a71227eb28106731da6\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\s518813\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-28.0.0.aar\\cb95c3f9867b0d4efb4b250680000aed\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\s521476\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b889e54e9c1fce39485aca7727d7f1e5\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\s518813\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\f60aaf5d17e334e4c1c3ddaaa3dea820\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

@@ -5,6 +5,9 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.s527839.trippleplay.R;
 
@@ -17,11 +20,40 @@ public class ScoreActivity extends AppCompatActivity {
     int hResult;
     int cResult;
     int rResult;
+    Button resetBTN;
+    TextView player1TV;
+    TextView player2TV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score);
+
+        if(MainActivity.user1 == 1){
+            Toast.makeText(this, "User 1 Wins!", Toast.LENGTH_SHORT).show();
+        }
+        resetBTN = (Button) findViewById(R.id.resetBTN);
+
+        resetBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.user1 = 0;
+                MainActivity.user2 = 0;
+                Intent ini = new Intent(ScoreActivity.this, MainActivity.class);
+                startActivity(ini);
+            }
+        });
+
+        player1TV = findViewById(R.id.player1TV);
+        player2TV = findViewById(R.id.player2TV);
+        String points1 = Integer.toString(MainActivity.user1);
+        String points2 = Integer.toString(MainActivity.user2);
+        String player1String = "Player 1 got " + points1 + " points";
+        String player2String = "Player 2 got " + points2 + " points";
+        player1TV.setText(player1String);
+        player2TV.setText(player2String);
+
+
     }
 
     public void onClickSS(View v){

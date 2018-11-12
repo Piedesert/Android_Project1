@@ -10,10 +10,10 @@
         android:id="@+id/textView4"
         android:layout_width="276dp"
         android:layout_height="82dp"
+        android:gravity="center"
         android:text="Tripple Play Tournament Score Board"
         android:textColor="@color/colorPrimary"
         android:textSize="25dp"
-        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.372"
@@ -22,16 +22,38 @@
         app:layout_constraintVertical_bias="0.162" />
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="144dp"
-        android:layout_height="75dp"
-        android:text="Go to Start Screen"
-        android:onClick="onClickSS"
+        android:id="@+id/resetBTN"
+        android:layout_width="138dp"
+        android:layout_height="79dp"
+        android:text="RESET"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.662"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.809" />
+        app:layout_constraintVertical_bias="0.856" />
+
+    <TextView
+        android:id="@+id/player1TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.199"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.463" />
+
+    <TextView
+        android:id="@+id/player2TV"
+        android:layout_width="wrap_content"
+        android:layout_height="18dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.462" />
 
 </android.support.constraint.ConstraintLayout>
