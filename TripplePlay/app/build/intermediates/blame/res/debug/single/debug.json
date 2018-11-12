@@ -108,10 +108,6 @@
         "source": "C:\\Users\\s521476\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b889e54e9c1fce39485aca7727d7f1e5\\res\\drawable-xxhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
     },
     {
-        "merged": "C:\\Users\\s521476\\AndroidStudioProjects\\TripplePlayAndriodProject\\Android_Project1\\TripplePlay\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bluesquare.png.flat",
-        "source": "C:\\Users\\s521476\\AndroidStudioProjects\\TripplePlayAndriodProject\\Android_Project1\\TripplePlay\\app\\src\\main\\res\\drawable\\bluesquare.png"
-    },
-    {
         "merged": "C:\\Users\\s521476\\AndroidStudioProjects\\TripplePlayAndriodProject\\Android_Project1\\TripplePlay\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
         "source": "C:\\Users\\s521476\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b889e54e9c1fce39485aca7727d7f1e5\\res\\drawable-hdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png"
     },
@@ -496,6 +492,10 @@
         "source": "C:\\Users\\s521476\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b889e54e9c1fce39485aca7727d7f1e5\\res\\drawable-xhdpi-v4\\abc_ic_star_half_black_36dp.png"
     },
     {
+        "merged": "C:\\Users\\s521476\\AndroidStudioProjects\\TripplePlayAndriodProject\\Android_Project1\\TripplePlay\\app\\build\\intermediates\\res\\merged\\debug\\drawable_orangesquare.png.flat",
+        "source": "C:\\Users\\s521476\\AndroidStudioProjects\\TripplePlayAndriodProject\\Android_Project1\\TripplePlay\\app\\src\\main\\res\\drawable\\orangesquare.png"
+    },
+    {
         "merged": "C:\\Users\\s521476\\AndroidStudioProjects\\TripplePlayAndriodProject\\Android_Project1\\TripplePlay\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_switch_thumb_material.xml.flat",
         "source": "C:\\Users\\s521476\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b889e54e9c1fce39485aca7727d7f1e5\\res\\drawable\\abc_switch_thumb_material.xml"
     },
@@ -676,16 +676,16 @@
         "source": "C:\\Users\\s521476\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b889e54e9c1fce39485aca7727d7f1e5\\res\\drawable-mdpi-v4\\abc_spinner_mtrl_am_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\s521476\\AndroidStudioProjects\\TripplePlayAndriodProject\\Android_Project1\\TripplePlay\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
-        "source": "C:\\Users\\s521476\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b889e54e9c1fce39485aca7727d7f1e5\\res\\drawable-xxhdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
+        "merged": "C:\\Users\\s521476\\AndroidStudioProjects\\TripplePlayAndriodProject\\Android_Project1\\TripplePlay\\app\\build\\intermediates\\res\\merged\\debug\\drawable_redchecker.jpg.flat",
+        "source": "C:\\Users\\s521476\\AndroidStudioProjects\\TripplePlayAndriodProject\\Android_Project1\\TripplePlay\\app\\src\\main\\res\\drawable\\redchecker.jpg"
     },
     {
         "merged": "C:\\Users\\s521476\\AndroidStudioProjects\\TripplePlayAndriodProject\\Android_Project1\\TripplePlay\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_spinner_textfield_background_material.xml.flat",
         "source": "C:\\Users\\s521476\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b889e54e9c1fce39485aca7727d7f1e5\\res\\drawable\\abc_spinner_textfield_background_material.xml"
     },
     {
-        "merged": "C:\\Users\\s521476\\AndroidStudioProjects\\TripplePlayAndriodProject\\Android_Project1\\TripplePlay\\app\\build\\intermediates\\res\\merged\\debug\\drawable_redchecker.jpg.flat",
-        "source": "C:\\Users\\s521476\\AndroidStudioProjects\\TripplePlayAndriodProject\\Android_Project1\\TripplePlay\\app\\src\\main\\res\\drawable\\redchecker.jpg"
+        "merged": "C:\\Users\\s521476\\AndroidStudioProjects\\TripplePlayAndriodProject\\Android_Project1\\TripplePlay\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
+        "source": "C:\\Users\\s521476\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b889e54e9c1fce39485aca7727d7f1e5\\res\\drawable-xxhdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
     },
     {
         "merged": "C:\\Users\\s521476\\AndroidStudioProjects\\TripplePlayAndriodProject\\Android_Project1\\TripplePlay\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_search_view.xml.flat",
@@ -1478,6 +1478,10 @@
     {
         "merged": "C:\\Users\\s521476\\AndroidStudioProjects\\TripplePlayAndriodProject\\Android_Project1\\TripplePlay\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_half_black_16dp.png.flat",
         "source": "C:\\Users\\s521476\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b889e54e9c1fce39485aca7727d7f1e5\\res\\drawable-xxxhdpi-v4\\abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "C:\\Users\\s521476\\AndroidStudioProjects\\TripplePlayAndriodProject\\Android_Project1\\TripplePlay\\app\\build\\intermediates\\res\\merged\\debug\\drawable_purplesquare.png.flat",
+        "source": "C:\\Users\\s521476\\AndroidStudioProjects\\TripplePlayAndriodProject\\Android_Project1\\TripplePlay\\app\\src\\main\\res\\drawable\\purplesquare.png"
     },
     {
         "merged": "C:\\Users\\s521476\\AndroidStudioProjects\\TripplePlayAndriodProject\\Android_Project1\\TripplePlay\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_seekbar_thumb_material.xml.flat",

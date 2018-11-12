@@ -191,7 +191,7 @@
     </TableLayout>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/message"
         android:layout_width="319dp"
         android:layout_height="69dp"
         android:gravity="center"
