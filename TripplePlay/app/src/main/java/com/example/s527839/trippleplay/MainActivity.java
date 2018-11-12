@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         playBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent ini = new Intent(MainActivity.this, C4Activity.class);
+                Intent ini = new Intent(MainActivity.this, HangmanActivity.class);
                 Toast.makeText(MainActivity.this, "Time to Tripple Play!", Toast.LENGTH_SHORT).show();
                 startActivity(ini);
             }
