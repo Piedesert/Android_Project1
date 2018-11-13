@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 import android.app.ActionBar.*;
 
@@ -20,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     private static final int request_code = 1;
     public static int user1;
     public static int user2;
+    public static String username1;
+    public static String username2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +35,13 @@ public class MainActivity extends AppCompatActivity {
         playBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent ini = new Intent(MainActivity.this, HangmanActivity.class);
+                Intent ini = new Intent(MainActivity.this, C4Activity.class);
+
+                EditText playerName1 = findViewById(R.id.player1name);
+                EditText playerName2 = findViewById(R.id.player2name);
+                username1 = playerName1.getText().toString();
+                username2 = playerName2.getText().toString();
+
                 Toast.makeText(MainActivity.this, "Time to Tripple Play!", Toast.LENGTH_SHORT).show();
                 startActivity(ini);
             }
