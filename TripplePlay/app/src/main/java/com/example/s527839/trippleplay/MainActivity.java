@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         playBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent ini = new Intent(MainActivity.this, C4Activity.class);
+                Intent ini = new Intent(MainActivity.this, HangmanActivity.class);
 
                 EditText playerName1 = findViewById(R.id.player1name);
                 EditText playerName2 = findViewById(R.id.player2name);
