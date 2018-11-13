@@ -92,17 +92,18 @@ public class C4Activity extends AppCompatActivity implements View.OnClickListene
 
 
         // Start next game rpsActivity
-        nextBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+       nextBTN.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
                 Intent ini = new Intent(C4Activity.this, rpsActivity.class);
+                Toast.makeText(C4Activity.this, "Rock, Paper, Scissors", Toast.LENGTH_SHORT).show();
                 Intent scoreSend = new Intent(C4Activity.this, ScoreActivity.class);
                 scoreSend.putExtra("c4Result", result);
                 setResult(2, scoreSend);
                 finish();
                 startActivity(ini);
             }
-        });
+       });
 
         // Start htpActivity (How To Play)
         htpBTN.setOnClickListener(new View.OnClickListener() {
@@ -134,7 +135,7 @@ public class C4Activity extends AppCompatActivity implements View.OnClickListene
 
                 if (user % 2 == 0) {
                     arrayRed.add("row1col2");
-                    redImage(row1col2, R.id.row1col2);
+                   redImage(row1col2, R.id.row1col2);
                     winCondition(arrayRed, arrayBlue);
                 } else {
                     arrayBlue.add("row1col2");
@@ -437,7 +438,7 @@ public class C4Activity extends AppCompatActivity implements View.OnClickListene
                     winCondition(arrayRed, arrayBlue);
                 } else {
                     arrayBlue.add("row5col5");
-                    blueImage(row5col5, R.id.row5col5);
+                    blueImage(row5col5,R.id.row5col5);
                     winCondition(arrayRed, arrayBlue);
                 }
                 user++;
@@ -458,7 +459,7 @@ public class C4Activity extends AppCompatActivity implements View.OnClickListene
         player1 = findViewById(a);
         player1.setImageResource(R.drawable.redchecker);
         player1.setEnabled(false);
-        message.setText(MainActivity.username2 + " it's Your Turn");
+        message.setText("Player Two's Turn");
     }
 
     public void blueImage(ImageButton player2, int b) {
@@ -466,15 +467,10 @@ public class C4Activity extends AppCompatActivity implements View.OnClickListene
         player2 = findViewById(b);
         player2.setImageResource(R.drawable.bluesquare2);
         player2.setEnabled(false);
-        message.setText(MainActivity.username1 + " it's Your Turn");
+        message.setText("Player One's Turn");
     }
-
-    public void winCondition(ArrayList<String> red, ArrayList<String> blue) {
-        int blueWon = 0;
-        int redWon = 0;
-        int sizeArray = 0;
-        sizeArray = blue.size() + red.size();
-        if ((red.contains("row1col1") && red.contains("row1col2") && red.contains("row1col3") && red.contains("row1col4")) ||
+    public void winCondition(ArrayList<String> red, ArrayList<String> blue){
+        if((red.contains("row1col1") && red.contains("row1col2") && red.contains("row1col3") && red.contains("row1col4"))||
                 (red.contains("row1col2") && red.contains("row1col3") && red.contains("row1col4") && red.contains("row1col5")) ||
                 (red.contains("row2col1") && red.contains("row2col2") && red.contains("row2col3") && red.contains("row2col4")) ||
                 (red.contains("row2col2") && red.contains("row2col3") && red.contains("row2col4") && red.contains("row2col5")) ||
@@ -501,177 +497,178 @@ public class C4Activity extends AppCompatActivity implements View.OnClickListene
                 (red.contains("row5col1") && red.contains("row4col2") && red.contains("row3col3") && red.contains("row2col4")) ||
                 (red.contains("row4col2") && red.contains("row3col3") && red.contains("row2col4") && red.contains("row1col5")) ||
                 (red.contains("row1col1") && red.contains("row2col2") && red.contains("row3col3") && red.contains("row4col4")) ||
-                (red.contains("row2col2") && red.contains("row3col3") && red.contains("row4col4") && red.contains("row5col5"))) {
-            if ((red.contains("row1col1") && red.contains("row1col2") && red.contains("row1col3") && red.contains("row1col4"))) {
+                (red.contains("row2col2") && red.contains("row3col3") && red.contains("row4col4") && red.contains("row5col5")))
+        {
+            if((red.contains("row1col1") && red.contains("row1col2") && red.contains("row1col3") && red.contains("row1col4"))){
                 row1col1.setImageResource(R.drawable.orangesquare);
                 row1col2.setImageResource(R.drawable.orangesquare);
                 row1col3.setImageResource(R.drawable.orangesquare);
                 row1col4.setImageResource(R.drawable.orangesquare);
             }
-            if (red.contains("row2col1") && red.contains("row2col2") && red.contains("row2col3") && red.contains("row2col4")) {
+            if(red.contains("row2col1") && red.contains("row2col2") && red.contains("row2col3") && red.contains("row2col4")){
                 row2col1.setImageResource(R.drawable.orangesquare);
                 row2col2.setImageResource(R.drawable.orangesquare);
                 row2col3.setImageResource(R.drawable.orangesquare);
                 row2col4.setImageResource(R.drawable.orangesquare);
             }
-            if (red.contains("row2col2") && red.contains("row2col3") && red.contains("row2col4") && red.contains("row2col5")) {
+            if(red.contains("row2col2") && red.contains("row2col3") && red.contains("row2col4") && red.contains("row2col5")){
                 row2col2.setImageResource(R.drawable.orangesquare);
                 row2col3.setImageResource(R.drawable.orangesquare);
                 row2col4.setImageResource(R.drawable.orangesquare);
                 row2col5.setImageResource(R.drawable.orangesquare);
             }
-            if (red.contains("row3col1") && red.contains("row3col2") && red.contains("row3col3") && red.contains("row3col4")) {
+            if(red.contains("row3col1") && red.contains("row3col2") && red.contains("row3col3") && red.contains("row3col4")){
                 row3col1.setImageResource(R.drawable.orangesquare);
                 row3col2.setImageResource(R.drawable.orangesquare);
                 row3col3.setImageResource(R.drawable.orangesquare);
                 row3col4.setImageResource(R.drawable.orangesquare);
             }
-            if (red.contains("row3col2") && red.contains("row3col3") && red.contains("row3col4") && red.contains("row3col5")) {
+            if(red.contains("row3col2") && red.contains("row3col3") && red.contains("row3col4") && red.contains("row3col5")){
                 row3col2.setImageResource(R.drawable.orangesquare);
                 row3col3.setImageResource(R.drawable.orangesquare);
                 row3col4.setImageResource(R.drawable.orangesquare);
                 row3col5.setImageResource(R.drawable.orangesquare);
             }
-            if (red.contains("row4col1") && red.contains("row4col2") && red.contains("row4col3") && red.contains("row4col4")) {
+            if(red.contains("row4col1") && red.contains("row4col2") && red.contains("row4col3") && red.contains("row4col4")){
                 row4col1.setImageResource(R.drawable.orangesquare);
                 row4col2.setImageResource(R.drawable.orangesquare);
                 row4col3.setImageResource(R.drawable.orangesquare);
                 row4col4.setImageResource(R.drawable.orangesquare);
             }
-            if (red.contains("row4col2") && red.contains("row4col3") && red.contains("row4col4") && red.contains("row4col5")) {
+            if(red.contains("row4col2") && red.contains("row4col3") && red.contains("row4col4") && red.contains("row4col5")){
                 row4col2.setImageResource(R.drawable.orangesquare);
                 row4col3.setImageResource(R.drawable.orangesquare);
                 row4col4.setImageResource(R.drawable.orangesquare);
                 row4col5.setImageResource(R.drawable.orangesquare);
             }
-            if (red.contains("row5col1") && red.contains("row5col2") && red.contains("row5col3") && red.contains("row5col4")) {
+            if(red.contains("row5col1") && red.contains("row5col2") && red.contains("row5col3") && red.contains("row5col4")){
                 row5col1.setImageResource(R.drawable.orangesquare);
                 row5col2.setImageResource(R.drawable.orangesquare);
                 row5col3.setImageResource(R.drawable.orangesquare);
                 row5col4.setImageResource(R.drawable.orangesquare);
             }
-            if (red.contains("row5col2") && red.contains("row5col3") && red.contains("row5col4") && red.contains("row5col5")) {
+            if(red.contains("row5col2") && red.contains("row5col3") && red.contains("row5col4") && red.contains("row5col5")){
                 row5col2.setImageResource(R.drawable.orangesquare);
                 row5col3.setImageResource(R.drawable.orangesquare);
                 row5col4.setImageResource(R.drawable.orangesquare);
                 row5col5.setImageResource(R.drawable.orangesquare);
             }
-            if (red.contains("row1col1") && red.contains("row2col1") && red.contains("row3col1") && red.contains("row4col1")) {
+            if(red.contains("row1col1") && red.contains("row2col1") && red.contains("row3col1") && red.contains("row4col1")){
                 row1col1.setImageResource(R.drawable.orangesquare);
                 row2col1.setImageResource(R.drawable.orangesquare);
                 row3col1.setImageResource(R.drawable.orangesquare);
                 row4col1.setImageResource(R.drawable.orangesquare);
             }
-            if (red.contains("row2col1") && red.contains("row3col1") && red.contains("row4col1") && red.contains("row5col1")) {
+            if(red.contains("row2col1") && red.contains("row3col1") && red.contains("row4col1") && red.contains("row5col1")){
                 row2col1.setImageResource(R.drawable.orangesquare);
                 row3col1.setImageResource(R.drawable.orangesquare);
                 row4col1.setImageResource(R.drawable.orangesquare);
                 row5col1.setImageResource(R.drawable.orangesquare);
             }
-            if (red.contains("row1col2") && red.contains("row2col2") && red.contains("row3col2") && red.contains("row4col2")) {
+            if(red.contains("row1col2") && red.contains("row2col2") && red.contains("row3col2") && red.contains("row4col2")){
                 row1col2.setImageResource(R.drawable.orangesquare);
                 row2col2.setImageResource(R.drawable.orangesquare);
                 row3col2.setImageResource(R.drawable.orangesquare);
                 row4col2.setImageResource(R.drawable.orangesquare);
             }
-            if (red.contains("row2col2") && red.contains("row3col2") && red.contains("row4col2") && red.contains("row5col2")) {
+            if(red.contains("row2col2") && red.contains("row3col2") && red.contains("row4col2") && red.contains("row5col2")){
                 row2col2.setImageResource(R.drawable.orangesquare);
                 row3col2.setImageResource(R.drawable.orangesquare);
                 row4col2.setImageResource(R.drawable.orangesquare);
                 row5col2.setImageResource(R.drawable.orangesquare);
             }
-            if (red.contains("row1col3") && red.contains("row2col3") && red.contains("row3col3") && red.contains("row4col3")) {
+            if(red.contains("row1col3") && red.contains("row2col3") && red.contains("row3col3") && red.contains("row4col3")){
                 row1col3.setImageResource(R.drawable.orangesquare);
                 row2col3.setImageResource(R.drawable.orangesquare);
                 row3col3.setImageResource(R.drawable.orangesquare);
                 row4col3.setImageResource(R.drawable.orangesquare);
             }
-            if (red.contains("row2col3") && red.contains("row3col3") && red.contains("row4col3") && red.contains("row5col3")) {
+            if(red.contains("row2col3") && red.contains("row3col3") && red.contains("row4col3") && red.contains("row5col3")){
                 row2col3.setImageResource(R.drawable.orangesquare);
                 row3col3.setImageResource(R.drawable.orangesquare);
                 row4col3.setImageResource(R.drawable.orangesquare);
                 row5col3.setImageResource(R.drawable.orangesquare);
             }
-            if (red.contains("row2col2") && red.contains("row3col3") && red.contains("row4col4") && red.contains("row5col5")) {
+            if(red.contains("row2col2") && red.contains("row3col3") && red.contains("row4col4") && red.contains("row5col5")){
                 row2col2.setImageResource(R.drawable.orangesquare);
                 row3col3.setImageResource(R.drawable.orangesquare);
                 row4col4.setImageResource(R.drawable.orangesquare);
                 row5col5.setImageResource(R.drawable.orangesquare);
             }
-            if (red.contains("row1col4") && red.contains("row2col4") && red.contains("row3col4") && red.contains("row4col4")) {
+            if(red.contains("row1col4") && red.contains("row2col4") && red.contains("row3col4") && red.contains("row4col4")){
                 row1col4.setImageResource(R.drawable.orangesquare);
                 row2col4.setImageResource(R.drawable.orangesquare);
                 row3col4.setImageResource(R.drawable.orangesquare);
                 row4col4.setImageResource(R.drawable.orangesquare);
             }
-            if (red.contains("row2col4") && red.contains("row3col4") && red.contains("row4col4") && red.contains("row5col4")) {
+            if(red.contains("row2col4") && red.contains("row3col4") && red.contains("row4col4") && red.contains("row5col4")){
                 row2col4.setImageResource(R.drawable.orangesquare);
                 row3col4.setImageResource(R.drawable.orangesquare);
                 row4col4.setImageResource(R.drawable.orangesquare);
                 row5col4.setImageResource(R.drawable.orangesquare);
             }
-            if (red.contains("row1col5") && red.contains("row2col5") && red.contains("row3col5") && red.contains("row4col5")) {
+            if(red.contains("row1col5") && red.contains("row2col5") && red.contains("row3col5") && red.contains("row4col5")){
                 row1col5.setImageResource(R.drawable.orangesquare);
                 row2col5.setImageResource(R.drawable.orangesquare);
                 row3col5.setImageResource(R.drawable.orangesquare);
                 row4col5.setImageResource(R.drawable.orangesquare);
             }
-            if (red.contains("row2col5") && red.contains("row3col5") && red.contains("row4col5") && red.contains("row5col5")) {
+            if(red.contains("row2col5") && red.contains("row3col5") && red.contains("row4col5") && red.contains("row5col5")){
                 row2col5.setImageResource(R.drawable.orangesquare);
                 row3col5.setImageResource(R.drawable.orangesquare);
                 row4col5.setImageResource(R.drawable.orangesquare);
                 row5col5.setImageResource(R.drawable.orangesquare);
             }
-            if (red.contains("row2col1") && red.contains("row3col2") && red.contains("row4col3") && red.contains("row5col4")) {
+            if(red.contains("row2col1") && red.contains("row3col2") && red.contains("row4col3") && red.contains("row5col4")){
                 row2col1.setImageResource(R.drawable.orangesquare);
                 row3col2.setImageResource(R.drawable.orangesquare);
                 row4col3.setImageResource(R.drawable.orangesquare);
                 row5col4.setImageResource(R.drawable.orangesquare);
             }
-            if (red.contains("row1col2") && red.contains("row2col3") && red.contains("row3col4") && red.contains("row4col5")) {
+            if(red.contains("row1col2") && red.contains("row2col3") && red.contains("row3col4") && red.contains("row4col5")){
                 row1col2.setImageResource(R.drawable.orangesquare);
                 row2col3.setImageResource(R.drawable.orangesquare);
                 row3col4.setImageResource(R.drawable.orangesquare);
                 row4col5.setImageResource(R.drawable.orangesquare);
             }
-            if (red.contains("row4col1") && red.contains("row3col2") && red.contains("row2col3") && red.contains("row1col4")) {
+            if(red.contains("row4col1") && red.contains("row3col2") && red.contains("row2col3") && red.contains("row1col4")){
                 row4col1.setImageResource(R.drawable.orangesquare);
                 row3col2.setImageResource(R.drawable.orangesquare);
                 row2col3.setImageResource(R.drawable.orangesquare);
                 row1col4.setImageResource(R.drawable.orangesquare);
             }
-            if (red.contains("row5col2") && red.contains("row4col3") && red.contains("row3col4") && red.contains("row2col5")) {
+            if(red.contains("row5col2") && red.contains("row4col3") && red.contains("row3col4") && red.contains("row2col5")){
                 row5col2.setImageResource(R.drawable.orangesquare);
                 row4col3.setImageResource(R.drawable.orangesquare);
                 row3col4.setImageResource(R.drawable.orangesquare);
                 row2col5.setImageResource(R.drawable.orangesquare);
             }
-            if (red.contains("row5col1") && red.contains("row4col2") && red.contains("row3col3") && red.contains("row2col4")) {
+            if(red.contains("row5col1") && red.contains("row4col2") && red.contains("row3col3") && red.contains("row2col4")){
                 row5col1.setImageResource(R.drawable.orangesquare);
                 row4col2.setImageResource(R.drawable.orangesquare);
                 row3col3.setImageResource(R.drawable.orangesquare);
                 row2col4.setImageResource(R.drawable.orangesquare);
             }
-            if (red.contains("row5col1") && red.contains("row4col2") && red.contains("row3col3") && red.contains("row2col4")) {
+            if(red.contains("row5col1") && red.contains("row4col2") && red.contains("row3col3") && red.contains("row2col4")){
                 row5col1.setImageResource(R.drawable.orangesquare);
                 row4col2.setImageResource(R.drawable.orangesquare);
                 row3col3.setImageResource(R.drawable.orangesquare);
                 row2col4.setImageResource(R.drawable.orangesquare);
             }
-            if (red.contains("row4col2") && red.contains("row3col3") && red.contains("row2col4") && red.contains("row1col5")) {
+            if(red.contains("row4col2") && red.contains("row3col3") && red.contains("row2col4") && red.contains("row1col5")){
                 row4col2.setImageResource(R.drawable.orangesquare);
                 row3col3.setImageResource(R.drawable.orangesquare);
                 row2col4.setImageResource(R.drawable.orangesquare);
                 row1col5.setImageResource(R.drawable.orangesquare);
             }
-            if (red.contains("row1col1") && red.contains("row2col2") && red.contains("row3col3") && red.contains("row4col4")) {
+            if(red.contains("row1col1") && red.contains("row2col2") && red.contains("row3col3") && red.contains("row4col4")){
                 row1col1.setImageResource(R.drawable.orangesquare);
                 row2col2.setImageResource(R.drawable.orangesquare);
                 row3col3.setImageResource(R.drawable.orangesquare);
                 row4col4.setImageResource(R.drawable.orangesquare);
             }
             MainActivity.user1++;
-            if (MainActivity.user1 == 3) {
+            if(MainActivity.user1 == 3){
                 Intent ini = new Intent(C4Activity.this, ScoreActivity.class);
                 Toast.makeText(C4Activity.this, "Rock, Paper, Scissors", Toast.LENGTH_SHORT).show();
                 Intent scoreSend = new Intent(C4Activity.this, ScoreActivity.class);
@@ -681,8 +678,7 @@ public class C4Activity extends AppCompatActivity implements View.OnClickListene
                 startActivity(ini);
             }
             TextView message = findViewById(R.id.message);
-            message.setText(MainActivity.username1 + " Wins");
-            redWon = 1;
+            message.setText("Player one Wins");
             row1col1.setEnabled(false);
             row1col2.setEnabled(false);
             row1col3.setEnabled(false);
@@ -708,9 +704,8 @@ public class C4Activity extends AppCompatActivity implements View.OnClickListene
             row5col3.setEnabled(false);
             row5col4.setEnabled(false);
             row5col5.setEnabled(false);
-
         }
-        if ((blue.contains("row1col1") && blue.contains("row1col2") && blue.contains("row1col3") && blue.contains("row1col4")) ||
+        if((blue.contains("row1col1") && blue.contains("row1col2") && blue.contains("row1col3") && blue.contains("row1col4"))||
                 (blue.contains("row1col2") && blue.contains("row1col3") && blue.contains("row1col4") && blue.contains("row1col5")) ||
                 (blue.contains("row2col1") && blue.contains("row2col2") && blue.contains("row2col3") && blue.contains("row2col4")) ||
                 (blue.contains("row2col2") && blue.contains("row2col3") && blue.contains("row2col4") && blue.contains("row2col5")) ||
@@ -913,50 +908,43 @@ public class C4Activity extends AppCompatActivity implements View.OnClickListene
                 scoreSend.putExtra("c4Result", result);
                 setResult(2, scoreSend);
                 finish();
-                startActivity(ini);
+                startActivity(ini);}
+                TextView message = findViewById(R.id.message);
+                message.setText("Player two Wins");
+                row1col1.setEnabled(false);
+                row1col2.setEnabled(false);
+                row1col3.setEnabled(false);
+                row1col4.setEnabled(false);
+                row1col5.setEnabled(false);
+                row2col1.setEnabled(false);
+                row2col2.setEnabled(false);
+                row2col3.setEnabled(false);
+                row2col4.setEnabled(false);
+                row2col5.setEnabled(false);
+                row3col1.setEnabled(false);
+                row3col2.setEnabled(false);
+                row3col3.setEnabled(false);
+                row3col4.setEnabled(false);
+                row3col5.setEnabled(false);
+                row4col1.setEnabled(false);
+                row4col2.setEnabled(false);
+                row4col3.setEnabled(false);
+                row4col4.setEnabled(false);
+                row4col5.setEnabled(false);
+                row5col1.setEnabled(false);
+                row5col2.setEnabled(false);
+                row5col3.setEnabled(false);
+                row5col4.setEnabled(false);
+                row5col5.setEnabled(false);
             }
-            TextView message = findViewById(R.id.message);
-            message.setText(MainActivity.username2 + " Wins");
-            blueWon = 1;
-            row1col1.setEnabled(false);
-            row1col2.setEnabled(false);
-            row1col3.setEnabled(false);
-            row1col4.setEnabled(false);
-            row1col5.setEnabled(false);
-            row2col1.setEnabled(false);
-            row2col2.setEnabled(false);
-            row2col3.setEnabled(false);
-            row2col4.setEnabled(false);
-            row2col5.setEnabled(false);
-            row3col1.setEnabled(false);
-            row3col2.setEnabled(false);
-            row3col3.setEnabled(false);
-            row3col4.setEnabled(false);
-            row3col5.setEnabled(false);
-            row4col1.setEnabled(false);
-            row4col2.setEnabled(false);
-            row4col3.setEnabled(false);
-            row4col4.setEnabled(false);
-            row4col5.setEnabled(false);
-            row5col1.setEnabled(false);
-            row5col2.setEnabled(false);
-            row5col3.setEnabled(false);
-            row5col4.setEnabled(false);
-            row5col5.setEnabled(false);
-        }
-        if (sizeArray == 25 && redWon == 0 && blueWon == 0) {
-            TextView message = findViewById(R.id.message);
-            message.setText("Oops hit the reset button to try again");
-        }
-    }
 
 
-
+}
 
 
     public void reset() {
         TextView message = findViewById(R.id.message);
-        message.setText("Want a Fresh Start?");
+        message.setText("A new round has been started");
         row1col1.setEnabled(true);
         row1col1.setImageResource(android.R.drawable.btn_star_big_on);
         row1col2.setEnabled(true);
