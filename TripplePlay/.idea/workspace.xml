@@ -49,8 +49,8 @@
       <file leaf-file-name="HangmanActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/s527839/trippleplay/HangmanActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="146" column="28" selection-start-line="146" selection-start-column="28" selection-end-line="146" selection-end-column="28" />
+            <state relative-caret-position="1904">
+              <caret line="137" column="35" lean-forward="true" selection-start-line="137" selection-start-column="35" selection-end-line="137" selection-end-column="35" />
               <folding>
                 <element signature="e#4216#4796#0" expanded="true" />
                 <element signature="e#4795#4796#0" expanded="true" />
@@ -59,15 +59,6 @@
                 <element signature="e#5620#5950#0" expanded="true" />
                 <element signature="e#5949#5950#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WordInput.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/s527839/trippleplay/WordInput.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="67" column="13" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -2409,22 +2400,6 @@
               <item name="TripplePlay" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
             </path>
-            <path>
-              <item name="TripplePlay" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="TripplePlay" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="trippleplay" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TripplePlay" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -2571,7 +2546,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="7" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -3047,8 +3021,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/s527839/trippleplay/HangmanActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="146" column="28" selection-start-line="146" selection-start-column="28" selection-end-line="146" selection-end-column="28" />
+        <state relative-caret-position="1904">
+          <caret line="137" column="35" lean-forward="true" selection-start-line="137" selection-start-column="35" selection-end-line="137" selection-end-column="35" />
           <folding>
             <element signature="e#4216#4796#0" expanded="true" />
             <element signature="e#4795#4796#0" expanded="true" />
