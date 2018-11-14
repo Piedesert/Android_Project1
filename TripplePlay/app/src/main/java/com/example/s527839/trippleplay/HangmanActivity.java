@@ -7,8 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.app.ActionBar.*;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.s527839.trippleplay.R;
@@ -21,13 +24,18 @@ import com.example.s527839.trippleplay.Hangman4Frag;
 import com.example.s527839.trippleplay.Hangman5Frag;
 import com.example.s527839.trippleplay.Hangman6Frag;
 
-public class HangmanActivity extends AppCompatActivity {
+import org.w3c.dom.Text;
+import java.util.Set;
+
+public class HangmanActivity extends AppCompatActivity
+        implements WordInput.setWord
+{
 
     String player;
     String winningPlayer;
     String result;
 // Hangman
-/*
+
     private static String SAVED_ONFRAGMENT = "OnFragment";
     private static String SAVED_HANG0_FRAG = "Hang0Fragment";
     private static String SAVED_HANG1_FRAG = "Hang1Fragment";
@@ -44,16 +52,21 @@ public class HangmanActivity extends AppCompatActivity {
     private Hangman4Frag h4IMG;
     private Hangman5Frag h5IMG;
     private Hangman6Frag h6IMG;
-*/
+
     Button nextBTN;
     Button htpBTN;
+    Button guessBTN;
     private static final int request_code = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hangman);
-/*
+
+        // Input a new guees word
+        WordInput input = new WordInput();
+        input.show(getSupportFragmentManager(),"New Word input");
+
         if(savedInstanceState!=null){
             // We are being restored, so we need to take care of our instance variables.
             Log.d("Restored", "Recreating my instance variables");
@@ -96,9 +109,10 @@ public class HangmanActivity extends AppCompatActivity {
         t.hide(h1IMG);
         t.add(R.id.nooseFrame, h0IMG);
         t.commit();
-*/
+
         nextBTN = (Button) findViewById(R.id.nextBTN);
         htpBTN = (Button) findViewById(R.id.htpBTN);
+        guessBTN = (Button) findViewById(R.id.guessBTN);
 
         // Start next game C4Activity
         nextBTN.setOnClickListener(new View.OnClickListener() {
@@ -106,7 +120,7 @@ public class HangmanActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent ini = new Intent(HangmanActivity.this, C4Activity.class);
                 Toast.makeText(HangmanActivity.this, "Connect Four", Toast.LENGTH_SHORT).show();
-                gameResult();
+                // gameResult();
                 Intent scoreSend = new Intent(HangmanActivity.this, ScoreActivity.class);
                 scoreSend.putExtra("hangmanResult", result);
                 setResult(1,scoreSend);
@@ -124,9 +138,23 @@ public class HangmanActivity extends AppCompatActivity {
                 startActivity(ini);
             }
         });
+        // Start htpActivity (How To Play)
+        guessBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //if (guessMade())
+                Toast.makeText(HangmanActivity.this, "WRONG", Toast.LENGTH_SHORT).show();
+                swapNoose();
+            }
+        });
 
-    }
-/*
+    } // onCreate
+
+    public void reset(){
+        onFragment = 1;
+        swapNoose();
+    } // reset
+
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -142,58 +170,70 @@ public class HangmanActivity extends AppCompatActivity {
         getSupportFragmentManager().putFragment(outState, SAVED_HANG4_FRAG, h4IMG);
         getSupportFragmentManager().putFragment(outState, SAVED_HANG5_FRAG, h5IMG);
         getSupportFragmentManager().putFragment(outState, SAVED_HANG6_FRAG, h6IMG);
-    }
+    } // oonSaveInstanceState
 
     public void swapNoose() {
-        if (onFragment == 1) {
-            FragmentTransaction t = getSupportFragmentManager().beginTransaction();
-            t.hide(h0IMG);
-            t.show(h1IMG);
-            t.commit();
-            onFragment = 2;
+        FragmentTransaction t = getSupportFragmentManager().beginTransaction();
+
+        switch (onFragment) {
+            case 1: t.hide(h0IMG);
+                    t.show(h1IMG);
+                    t.commit();
+                    onFragment = 2;
+                    break;
+
+            case 2: t.hide(h1IMG);
+                    t.show(h2IMG);
+                    t.commit();
+                    onFragment = 3;
+                    break;
+
+            case 3: t.hide(h2IMG);
+                    t.show(h3IMG);
+                    t.commit();
+                    onFragment = 4;
+                    break;
+
+            case 4: t.hide(h3IMG);
+                    t.show(h4IMG);
+                    t.commit();
+                    onFragment = 5;
+                    break;
+
+            case 5: t.hide(h4IMG);
+                    t.show(h5IMG);
+                    t.commit();
+                    onFragment = 6;
+                    break;
+
+            case 6: t.hide(h5IMG);
+                    t.show(h6IMG);
+                    t.commit();
+                    //gameOver();
+                    break;
+
+            default: break;
         }
-        if (onFragment == 2) {
-            FragmentTransaction t = getSupportFragmentManager().beginTransaction();
-            t.hide(h1IMG);
-            t.show(h2IMG);
-            t.commit();
-            onFragment = 3;
-        }
-        if (onFragment == 3) {
-            FragmentTransaction t = getSupportFragmentManager().beginTransaction();
-            t.hide(h2IMG);
-            t.show(h3IMG);
-            t.commit();
-            onFragment = 4;
-        }
-        if (onFragment == 4) {
-            FragmentTransaction t = getSupportFragmentManager().beginTransaction();
-            t.hide(h3IMG);
-            t.show(h4IMG);
-            t.commit();
-            onFragment = 4;
-        }
-        if (onFragment == 5) {
-            FragmentTransaction t = getSupportFragmentManager().beginTransaction();
-            t.hide(h4IMG);
-            t.show(h5IMG);
-            t.commit();
-            onFragment = 6;
-        }
-        if (onFragment == 6) {
-            FragmentTransaction t = getSupportFragmentManager().beginTransaction();
-            t.hide(h5IMG);
-            t.show(h6IMG);
-            t.commit();
-            onFragment = 0;
-            //gameOver();
+        Log.d("onFragment: ", "Hangman " + onFragment + "/6");
+
+    } // swapNoose
+
+    @Override
+    public void setGuessWord(String input) {
+
+        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.guessWordLayout);
+
+        for (int i = 0; i < input.length(); i++) {
+            TextView textView = new TextView(this);
+            textView.setText(input.charAt(i));
+            linearLayout.addView(textView);
         }
 
-    }*/
-
+    }
+/*
     public void gameResult(){
         Toast.makeText(HangmanActivity.this,"Player " + winningPlayer + " wins!",Toast.LENGTH_LONG).show();
         result = winningPlayer;
-}
-
+    } // gameResult
+*/
 }
