@@ -59,7 +59,7 @@ public class WordInput extends DialogFragment {
             public void onClick(DialogInterface dialog, int which) {
                 String saved = input.getText().toString();
                 m_Text = input.getText().toString();
-                ((HangmanActivity)getActivity()).setGuessWord(m_Text);
+                ((HangmanActivity)getActivity()).setGuessWord("");
             }
         });
         /*
