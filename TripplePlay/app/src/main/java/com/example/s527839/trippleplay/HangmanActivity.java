@@ -220,20 +220,37 @@ public class HangmanActivity extends AppCompatActivity
 
     @Override
     public void setGuessWord(String input) {
-
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.guessWordLayout);
-
         for (int i = 0; i < input.length(); i++) {
-            TextView textView = new TextView(this);
-            textView.setText(input.charAt(i));
-            linearLayout.addView(textView);
+            TextView spaceTV = new TextView(this);
+            spaceTV.setId((int)System.currentTimeMillis());
+            spaceTV.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
+            spaceTV.setText(input.charAt(i));
+            linearLayout.addView(spaceTV);
         }
 
     }
 /*
     public void gameResult(){
-        Toast.makeText(HangmanActivity.this,"Player " + winningPlayer + " wins!",Toast.LENGTH_LONG).show();
-        result = winningPlayer;
+        Toast.makeText(HangmanActivity.this,winningPlayer + " wins!",Toast.LENGTH_LONG).show();
+        if (1) {
+            result = winningPlayer;
+            MainActivity.user1++;
+        }
+
+        if (2) {
+            result = winningPlayer;
+            MainActivity.user2++;
+        }
+
+        if(MainActivity.user1 == 3){
+            Intent ini = new Intent(HangmanActivity.this, ScoreActivity.class);
+            Intent scoreSend = new Intent(HangmanActivity.this, ScoreActivity.class);
+            scoreSend.putExtra("Hangman Result: ", result);
+            setResult(2, scoreSend);
+            finish();
+            startActivity(ini);
+        }
     } // gameResult
 */
 }

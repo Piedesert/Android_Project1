@@ -469,6 +469,7 @@ public class C4Activity extends AppCompatActivity implements View.OnClickListene
         player2.setEnabled(false);
         message.setText("Player One's Turn");
     }
+
     public void winCondition(ArrayList<String> red, ArrayList<String> blue){
         if((red.contains("row1col1") && red.contains("row1col2") && red.contains("row1col3") && red.contains("row1col4"))||
                 (red.contains("row1col2") && red.contains("row1col3") && red.contains("row1col4") && red.contains("row1col5")) ||

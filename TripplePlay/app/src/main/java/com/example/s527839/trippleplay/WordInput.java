@@ -16,7 +16,8 @@ import android.widget.EditText;
 
 public class WordInput extends DialogFragment {
 
-    private String m_Text = "";
+    private String m_Text;
+    EditText input;
 
     public interface setWord {
         public void setGuessWord(String input);
@@ -32,7 +33,7 @@ public class WordInput extends DialogFragment {
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         super.onCreateDialog(savedInstanceState);
-        AlertDialog.Builder factory = new AlertDialog.Builder(getContext());
+        /*AlertDialog.Builder factory = new AlertDialog.Builder(getContext());
 
         // Get the layout inflater
         LayoutInflater inflater = getActivity().getLayoutInflater();
@@ -43,10 +44,12 @@ public class WordInput extends DialogFragment {
         View viewInflated = LayoutInflater.from(getContext()).inflate(R.layout.guess_word_layout, (ViewGroup) getView(), false);
 
         // Set up the input
-        final EditText input = viewInflated.findViewById(R.id.guessWordET);
-
+        input = (EditText) viewInflated.findViewById(R.id.guessWordET);
         input.setInputType(InputType.TYPE_CLASS_TEXT);
-
+*/
+        AlertDialog.Builder factory = new AlertDialog.Builder(getContext());
+        final EditText input = new EditText(getContext());
+        factory.setView(input);
         factory.setTitle("Input a word to be guessed");
 
         //factory.setMessage("");
@@ -54,6 +57,7 @@ public class WordInput extends DialogFragment {
         factory.setPositiveButton("OKAY", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                String saved = input.getText().toString();
                 m_Text = input.getText().toString();
                 ((HangmanActivity)getActivity()).setGuessWord(m_Text);
             }
