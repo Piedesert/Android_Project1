@@ -272,6 +272,10 @@
         "source": "C:\\Users\\s527839\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\f00289a415e33131105ccd0c4e54c89d\\res\\layout-v21\\notification_template_icon_group.xml"
     },
     {
+        "merged": "C:\\Users\\s527839\\Documents\\Programming\\Android\\Android_Project1\\TripplePlay\\app\\build\\intermediates\\res\\merged\\debug\\layout_guessword_textview.xml.flat",
+        "source": "C:\\Users\\s527839\\Documents\\Programming\\Android\\Android_Project1\\TripplePlay\\app\\src\\main\\res\\layout\\guessword_textview.xml"
+    },
+    {
         "merged": "C:\\Users\\s527839\\Documents\\Programming\\Android\\Android_Project1\\TripplePlay\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\s527839\\Documents\\Programming\\Android\\Android_Project1\\TripplePlay\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },

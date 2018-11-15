@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="guessWordTheme">
+        <attr name="guessWordStyle" format="reference" />
+    </declare-styleable>
+
+    <style name="guessWordTheme">
+        <item name="guessWordStyle">@style/guessWordStyle</item>
+    </style>
+
+    <!-- Define the custom button style itself. Make sure
+         to inherit from an existing button style. -->
+    <style name="guessWordStyle">
+        <item name="android:textColor">#000</item>
+        <item name = "android:textAllCaps">true</item>
+        <item name = "android:textSize">69sp</item>
+    </style>
+</resources>

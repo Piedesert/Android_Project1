@@ -21,4 +21,5 @@
     <string name="guessSpace3TV">_</string>
     <string name="guessSpace4TV">_</string>
     <string name="guessWord_hint">Hang the man with one word</string>
+    <string name="spaceTV">_</string>
 </resources>
