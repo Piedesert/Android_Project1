@@ -33,7 +33,7 @@ public class WordInput extends DialogFragment {
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         super.onCreateDialog(savedInstanceState);
-        /*AlertDialog.Builder factory = new AlertDialog.Builder(getContext());
+        AlertDialog.Builder factory = new AlertDialog.Builder(getContext());
 
         // Get the layout inflater
         LayoutInflater inflater = getActivity().getLayoutInflater();
@@ -46,10 +46,8 @@ public class WordInput extends DialogFragment {
         // Set up the input
         input = (EditText) viewInflated.findViewById(R.id.guessWordET);
         input.setInputType(InputType.TYPE_CLASS_TEXT);
-*/
-        AlertDialog.Builder factory = new AlertDialog.Builder(getContext());
-        final EditText input = new EditText(getContext());
-        factory.setView(input);
+
+        factory.setView(viewInflated);
         factory.setTitle("Input a word to be guessed");
 
         //factory.setMessage("");
@@ -59,7 +57,7 @@ public class WordInput extends DialogFragment {
             public void onClick(DialogInterface dialog, int which) {
                 String saved = input.getText().toString();
                 m_Text = input.getText().toString();
-                ((HangmanActivity)getActivity()).setGuessWord("");
+                ((HangmanActivity)getActivity()).setGuessWord(m_Text);
             }
         });
         /*

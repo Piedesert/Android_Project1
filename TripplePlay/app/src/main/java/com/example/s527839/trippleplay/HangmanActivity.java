@@ -221,11 +221,12 @@ public class HangmanActivity extends AppCompatActivity
     @Override
     public void setGuessWord(String input) {
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.guessWordLayout);
-        for (int i = 0; i < input.length(); i++) {
+        char[] inputArray = input.toCharArray();
+        for (int i = 0; i < inputArray.length; i++) {
             TextView spaceTV = new TextView(this);
             spaceTV.setId((int)System.currentTimeMillis());
             spaceTV.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
-            spaceTV.setText(input.charAt(i));
+            spaceTV.setText(String.valueOf(inputArray[i]));
             linearLayout.addView(spaceTV);
         }
 
