@@ -1168,6 +1168,10 @@
         "source": "C:\\Users\\s527839\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-28.0.0.aar\\68cdea471eed2a73f3c3eb6a78a50421\\res\\layout\\notification_template_media_custom.xml"
     },
     {
+        "merged": "C:\\Users\\s527839\\Documents\\Programming\\Android\\Android_Project1\\TripplePlay\\app\\build\\intermediates\\res\\merged\\debug\\layout_guess_word_layout.xml.flat",
+        "source": "C:\\Users\\s527839\\Documents\\Programming\\Android\\Android_Project1\\TripplePlay\\app\\src\\main\\res\\layout\\guess_word_layout.xml"
+    },
+    {
         "merged": "C:\\Users\\s527839\\Documents\\Programming\\Android\\Android_Project1\\TripplePlay\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_textfield_search_material.xml.flat",
         "source": "C:\\Users\\s527839\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\5941a11254dfa8d1336f876e12f233d1\\res\\drawable\\abc_textfield_search_material.xml"
     },
@@ -1518,6 +1522,10 @@
     {
         "merged": "C:\\Users\\s527839\\Documents\\Programming\\Android\\Android_Project1\\TripplePlay\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\s527839\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\5941a11254dfa8d1336f876e12f233d1\\res\\drawable-xxhdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "C:\\Users\\s527839\\Documents\\Programming\\Android\\Android_Project1\\TripplePlay\\app\\build\\intermediates\\res\\merged\\debug\\layout-v26_guess_word_layout.xml.flat",
+        "source": "C:\\Users\\s527839\\Documents\\Programming\\Android\\Android_Project1\\TripplePlay\\app\\src\\main\\res\\layout-v26\\guess_word_layout.xml"
     },
     {
         "merged": "C:\\Users\\s527839\\Documents\\Programming\\Android\\Android_Project1\\TripplePlay\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_low_normal.9.png.flat",

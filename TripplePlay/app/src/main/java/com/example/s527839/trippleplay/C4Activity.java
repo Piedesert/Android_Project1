@@ -474,7 +474,7 @@ public class C4Activity extends AppCompatActivity implements View.OnClickListene
         int redWon = 0;
         int sizeArray = 0;
         sizeArray = blue.size() + red.size();
-        if ((red.contains("row1col1") && red.contains("row1col2") && red.contains("row1col3") && red.contains("row1col4")) ||
+        if((red.contains("row1col1") && red.contains("row1col2") && red.contains("row1col3") && red.contains("row1col4"))||
                 (red.contains("row1col2") && red.contains("row1col3") && red.contains("row1col4") && red.contains("row1col5")) ||
                 (red.contains("row2col1") && red.contains("row2col2") && red.contains("row2col3") && red.contains("row2col4")) ||
                 (red.contains("row2col2") && red.contains("row2col3") && red.contains("row2col4") && red.contains("row2col5")) ||
