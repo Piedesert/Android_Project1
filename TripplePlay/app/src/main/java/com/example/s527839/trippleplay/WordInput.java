@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
@@ -19,8 +20,10 @@ public class WordInput extends DialogFragment {
     private String m_Text;
     EditText input;
 
+    // global guessWord variable
+
     public interface setWord {
-        public void setGuessWord(String input);
+        public String setGuessWord(String input);
     }
 
     public WordInput() {

@@ -142,9 +142,13 @@ public class HangmanActivity extends AppCompatActivity
         guessBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //if (guessMade())
-                Toast.makeText(HangmanActivity.this, "WRONG", Toast.LENGTH_SHORT).show();
-                swapNoose();
+                if (getGuess()){
+                    Toast.makeText(HangmanActivity.this, "CORRECT", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(HangmanActivity.this, "WRONG", Toast.LENGTH_SHORT).show();
+                    swapNoose();
+                }
             }
         });
 
@@ -219,7 +223,7 @@ public class HangmanActivity extends AppCompatActivity
     } // swapNoose
 
     @Override
-    public void setGuessWord(String input) {
+    public String setGuessWord(String input) {
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.guessWordLayout);
         // creating LayoutParams
         LayoutParams lpView = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
@@ -233,7 +237,20 @@ public class HangmanActivity extends AppCompatActivity
             spaceTV.setText("_");
             linearLayout.addView(spaceTV, lpView);
         }
+        return inputArray.toString();
+    }
 
+    public boolean getGuess(String input) {
+        boolean correct = false;
+        String guess = (String) getText(R.id.guessET);
+        char[] inputArray = input.toCharArray();
+        for (int i = 0; i < inputArray.length; i++) {
+            if (guess.equals(inputArray[i])) {
+                // spaceTV.setText(inputArray[i]);
+                correct = true;
+            }
+        }
+        return correct;
     }
 /*
     public void gameResult(){
