@@ -250,8 +250,8 @@ public class HangmanActivity extends AppCompatActivity
 
         for (int i = 0; i < userGuess.length; i++) {
             for (int j = 0; j < inputArray.length; j++) {
-                if (userGuess[i] == inputArray[j]) {
-                    spacesTV[j].setText(userGuess[i]);
+                if (Character.toUpperCase(userGuess[i]) == Character.toUpperCase(inputArray[j])) {
+                    spacesTV[j].setText(String.valueOf(userGuess[i]).toUpperCase());
                     correct = true;
                 }
             }

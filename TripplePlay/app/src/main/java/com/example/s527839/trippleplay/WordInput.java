@@ -12,6 +12,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class WordInput extends DialogFragment {
 
@@ -51,7 +55,15 @@ public class WordInput extends DialogFragment {
 
         // Set up the input
         input = (EditText) viewInflated.findViewById(R.id.guessWordET);
-        input.setInputType(InputType.TYPE_CLASS_TEXT);
+/*
+        Pattern ps = Pattern.compile("^[a-zA-Z ]+$");
+        Matcher ms = ps.matcher(input.getText().toString());
+        boolean bs = ms.matches();
+        if (bs == false) {
+            Toast.makeText(getActivity(), "Only characters allowed", Toast.LENGTH_LONG).show();
+        }
+*/
+        //input.setInputType(InputType.TYPE_CLASS_TEXT);
 
         factory.setView(viewInflated);
         factory.setTitle("Input a word to be guessed");

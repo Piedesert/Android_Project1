@@ -51,6 +51,7 @@
 
     <EditText
         android:id="@+id/guessET"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -60,14 +61,15 @@
         android:ems="10"
         android:hint="@string/guessLetterET"
         android:importantForAutofill="no"
-        android:inputType="textPersonName"
         android:maxLength="6"
+        android:textAllCaps="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.189"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.902" />
+        app:layout_constraintVertical_bias="0.902"
+        android:inputType="" />
 
     <Button
         android:id="@+id/nextBTN"

@@ -13,10 +13,11 @@
         android:layout_marginTop="16dp"
         android:layout_marginRight="4dp"
         android:layout_marginBottom="4dp"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
         android:hint="@string/guessWord_hint"
         android:importantForAutofill="no"
-        android:inputType="text"
         android:maxLength="6"
-        android:singleLine="true" />
+        android:singleLine="true"
+        android:inputType="" />
 </LinearLayout>
 
