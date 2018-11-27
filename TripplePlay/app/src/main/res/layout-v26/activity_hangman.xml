@@ -61,7 +61,7 @@
         android:ems="10"
         android:hint="@string/guessLetterET"
         android:importantForAutofill="no"
-        android:maxLength="6"
+        android:maxLength="1"
         android:textAllCaps="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
