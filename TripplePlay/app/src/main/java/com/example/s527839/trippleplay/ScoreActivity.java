@@ -48,8 +48,8 @@ public class ScoreActivity extends AppCompatActivity {
         player2TV = findViewById(R.id.player2TV);
         String points1 = Integer.toString(MainActivity.user1);
         String points2 = Integer.toString(MainActivity.user2);
-        String player1String = "Player 1 got " + points1 + " points";
-        String player2String = "Player 2 got " + points2 + " points";
+        String player1String = MainActivity.username1 + " got " + points1 + " points";
+        String player2String = MainActivity.username2 + " got " + points2 + " points";
         player1TV.setText(player1String);
         player2TV.setText(player2String);
 

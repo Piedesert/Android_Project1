@@ -252,6 +252,15 @@ public class HangmanActivity extends AppCompatActivity
             finish();
             startActivity(ini);
         }
+
+        if(MainActivity.user2 == 3){
+            Intent ini = new Intent(HangmanActivity.this, ScoreActivity.class);
+            Intent scoreSend = new Intent(HangmanActivity.this, ScoreActivity.class);
+            scoreSend.putExtra("Hangman Result: ", result);
+            setResult(2, scoreSend);
+            finish();
+            startActivity(ini);
+        }
     } // gameResult
 */
 }
