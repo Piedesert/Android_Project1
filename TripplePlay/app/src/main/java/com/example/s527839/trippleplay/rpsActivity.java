@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,42 +24,67 @@ public class rpsActivity extends AppCompatActivity {
     String result;
     String player;
     String winningPlayer;
-    TextView mTextView_Instructions;
-    TextView mTextView_Result;
+    ImageView user1pick, user2pick;
+    TextView user1_text, user2_text, winText;
+    ImageButton user1_rock, user2_rock, user1_paper, user2_paper, user1_scissors, user2_scissors;
 
-    Button mButton_Rock;
-    Button mButton_Paper;
-    Button mButton_Scissors;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rps);
 
-        mTextView_Instructions = findViewById(R.id.text_instructions);
-        mTextView_Result = findViewById(R.id.text_result);
-        mButton_Rock = findViewById(R.id.main_button_rock);
-        mButton_Rock.setOnClickListener(new View.OnClickListener() {
+        user1pick = findViewById(R.id.user1View);
+        user2pick = findViewById(R.id.user2View);
+        user1_text = findViewById(R.id.user1text);
+        user2_text = findViewById(R.id.user2text);
+        winText = findViewById(R.id.gameresult);
+        user1_rock = findViewById(R.id.rock1);
+        user2_rock = findViewById(R.id.rock2);
+        user1_paper = findViewById(R.id.paper1);
+        user2_paper = findViewById(R.id.paper2);
+        user1_scissors = findViewById(R.id.scissor1);
+        user2_scissors = findViewById(R.id.scissors2);
+
+        user1_rock.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                mTextView_Result.setText(play("Rock"));
+            public void onClick(View v) {
+                user1pick.setImageResource(R.drawable.rock);
+
             }
         });
 
-        mButton_Paper = findViewById(R.id.main_button_paper);
-        mButton_Paper.setOnClickListener(new View.OnClickListener() {
+        user1_scissors.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                mTextView_Result.setText(play("Paper"));
+            public void onClick(View v) {
+                user1pick.setImageResource(R.drawable.scissorsbig);
+            }
+        });
+
+        user1_paper.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                user1pick.setImageResource(R.drawable.paper);
+            }
+        });
+
+        user2_rock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
             }
         });
 
-        mButton_Scissors = findViewById(R.id.main_button_scissors);
-        mButton_Scissors.setOnClickListener(new View.OnClickListener() {
+        user2_scissors.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                mTextView_Result.setText(play("Scissors"));
+            public void onClick(View v) {
+
+            }
+        });
+
+        user2_paper.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
             }
         });
