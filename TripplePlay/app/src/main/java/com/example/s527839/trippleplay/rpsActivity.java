@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,54 +20,117 @@ public class rpsActivity extends AppCompatActivity {
 // Rock, Paper, Scissors
 
     Button htpBTN;
-    Button homeBTN;
+    Button homeBTN, reset;
     String result;
-    String player;
+    int  select1, select2;
     String winningPlayer;
-    TextView mTextView_Instructions;
-    TextView mTextView_Result;
+    ImageView user1pick, user2pick;
+    TextView message, user1, user2;
+    ImageButton user1_rock, user2_rock, user1_paper, user2_paper, user1_scissors, user2_scissors;
 
-    Button mButton_Rock;
-    Button mButton_Paper;
-    Button mButton_Scissors;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rps);
 
-        mTextView_Instructions = findViewById(R.id.text_instructions);
-        mTextView_Result = findViewById(R.id.text_result);
-        mButton_Rock = findViewById(R.id.main_button_rock);
-        mButton_Rock.setOnClickListener(new View.OnClickListener() {
+
+        select1 = 0;
+        select2 = 0;
+        user1 = findViewById(R.id.user1text);
+        user2 = findViewById(R.id.user2text);
+        user1pick = findViewById(R.id.user1View);
+        user2pick = findViewById(R.id.user2View);
+        message = findViewById(R.id.gameresult);
+        user1_rock = findViewById(R.id.rock1);
+        user2_rock = findViewById(R.id.rock2);
+        user1_paper = findViewById(R.id.paper1);
+        user2_paper = findViewById(R.id.paper2);
+        user1_scissors = findViewById(R.id.scissor1);
+        user2_scissors = findViewById(R.id.scissors2);
+        reset = findViewById(R.id.resetBTN);
+
+        user1.setText(MainActivity.username1 + "'s Picks");
+        user2.setText(MainActivity.username2 + "'s Picks");
+
+        reset.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                mTextView_Result.setText(play("Rock"));
+            public void onClick(View v) {
+                select1 = 0;
+                select2 = 0;
+                user1_paper.setEnabled(true);
+                user1_scissors.setEnabled(true);
+                user1_rock.setEnabled(true);
+                user2_scissors.setEnabled(true);
+                user2_rock.setEnabled(true);
+                user2_paper.setEnabled(true);
+                user1pick.setImageResource(R.color.colorPrimary);
+                user2pick.setImageResource(R.color.colorPrimary);
+
+            }
+        });
+        user1_rock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                select1 = 1;
+                userSelect();
+                winCondition();
+
             }
         });
 
-        mButton_Paper = findViewById(R.id.main_button_paper);
-        mButton_Paper.setOnClickListener(new View.OnClickListener() {
+        user1_scissors.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                mTextView_Result.setText(play("Paper"));
+            public void onClick(View v) {
+                select1 = 2;
+                userSelect();
+                winCondition();
 
             }
         });
 
-        mButton_Scissors = findViewById(R.id.main_button_scissors);
-        mButton_Scissors.setOnClickListener(new View.OnClickListener() {
+        user1_paper.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                mTextView_Result.setText(play("Scissors"));
+            public void onClick(View v) {
+                select1 = 3;
+                userSelect();
+                winCondition();
 
             }
         });
 
+        user2_rock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                select2 = 1;
+                userSelect();
+                winCondition();
 
-        htpBTN =(Button) findViewById(R.id.htpBTN);
+            }
+        });
 
-        homeBTN =(Button) findViewById(R.id.homeBTN);
+        user2_scissors.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                select2 = 2;
+                userSelect();
+                winCondition();
+            }
+        });
+
+        user2_paper.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                select2 = 3;
+                userSelect();
+                winCondition();
+            }
+        });
+
+
+        htpBTN = (Button) findViewById(R.id.htpBTN);
+
+        homeBTN = (Button) findViewById(R.id.homeBTN);
 
         // Start MainActivity
         homeBTN.setOnClickListener(new View.OnClickListener() {
@@ -83,9 +148,111 @@ public class rpsActivity extends AppCompatActivity {
         });
     }
 
+    public void userSelect() {
+        if (select1 == 1 && select2 != 0) {
+            user1pick.setImageResource(R.drawable.rock);
+        }
+        if (select1 == 2 && select2 != 0){
+            user1pick.setImageResource(R.drawable.scissorsbig);
+        }
+        if (select1 == 3 && select2 != 0){
+            user1pick.setImageResource(R.drawable.paper1);
+        }
+        if (select2 == 1 && select1 != 0) {
+            user2pick.setImageResource(R.drawable.rock);
+        }
+        if (select2 == 2 && select1 != 0){
+            user2pick.setImageResource(R.drawable.scissorsbig);
+        }
+        if (select2 == 3 && select1 != 0){
+            user2pick.setImageResource(R.drawable.paper1);
+        }
+    }
 
+    public void winCondition(){
+        if (select1 == 1 && select2 == 1){
+            message.setText("Tie. Both Players chose Rock");
+            user1_paper.setEnabled(false);
+            user1_scissors.setEnabled(false);
+            user1_rock.setEnabled(false);
+            user2_scissors.setEnabled(false);
+            user2_rock.setEnabled(false);
+            user2_paper.setEnabled(false);
+        }
+        if (select1 == 1 && select2 == 2){
+            message.setText(MainActivity.username1 + " Wins. Rock beats Scissors");
+            user1_paper.setEnabled(false);
+            user1_scissors.setEnabled(false);
+            user1_rock.setEnabled(false);
+            user2_scissors.setEnabled(false);
+            user2_rock.setEnabled(false);
+            user2_paper.setEnabled(false);
 
-
+        }
+        if (select1 == 1 && select2 == 3){
+            message.setText(MainActivity.username2 + " Wins. Paper beats Rock");
+            user1_paper.setEnabled(false);
+            user1_scissors.setEnabled(false);
+            user1_rock.setEnabled(false);
+            user2_scissors.setEnabled(false);
+            user2_rock.setEnabled(false);
+            user2_paper.setEnabled(false);
+        }
+        if (select1 == 2 && select2 == 1){
+            message.setText(MainActivity.username2 + " Wins. Rock beats Scissors");
+            user1_paper.setEnabled(false);
+            user1_scissors.setEnabled(false);
+            user1_rock.setEnabled(false);
+            user2_scissors.setEnabled(false);
+            user2_rock.setEnabled(false);
+            user2_paper.setEnabled(false);
+        }
+        if (select1 == 2 && select2 == 2){
+            message.setText("Tie. Both Players chose Scissors");
+            user1_paper.setEnabled(false);
+            user1_scissors.setEnabled(false);
+            user1_rock.setEnabled(false);
+            user2_scissors.setEnabled(false);
+            user2_rock.setEnabled(false);
+            user2_paper.setEnabled(false);
+        }
+        if (select1 == 2 && select2 == 3){
+            message.setText(MainActivity.username1 + " Wins. Scissors beats Paper");
+            user1_paper.setEnabled(false);
+            user1_scissors.setEnabled(false);
+            user1_rock.setEnabled(false);
+            user2_scissors.setEnabled(false);
+            user2_rock.setEnabled(false);
+            user2_paper.setEnabled(false);
+        }
+        if (select1 == 3 && select2 == 1){
+            message.setText(MainActivity.username1 + " Wins. Paper beats Rock");
+            user1_paper.setEnabled(false);
+            user1_scissors.setEnabled(false);
+            user1_rock.setEnabled(false);
+            user2_scissors.setEnabled(false);
+            user2_rock.setEnabled(false);
+            user2_paper.setEnabled(false);
+        }
+        if (select1 == 3 && select2 == 2){
+            message.setText(MainActivity.username2 + " Wins. Scissors beats Paper");
+            user1_paper.setEnabled(false);
+            user1_scissors.setEnabled(false);
+            user1_rock.setEnabled(false);
+            user2_scissors.setEnabled(false);
+            user2_rock.setEnabled(false);
+            user2_paper.setEnabled(false);
+        }
+        if (select1 == 3 && select2 == 3){
+            message.setText("Tie. Both Players chose Paper");
+            user1_paper.setEnabled(false);
+            user1_scissors.setEnabled(false);
+            user1_rock.setEnabled(false);
+            user2_scissors.setEnabled(false);
+            user2_rock.setEnabled(false);
+            user2_paper.setEnabled(false);
+        }
+    }
 
     public void gameResult() {
         Toast.makeText(rpsActivity.this, "Player " + winningPlayer + " wins!", Toast.LENGTH_LONG).show();
@@ -123,4 +290,5 @@ public class rpsActivity extends AppCompatActivity {
 
         return sResult;
     }
+
 }
