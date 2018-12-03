@@ -44,6 +44,21 @@ public class ScoreActivity extends AppCompatActivity {
         HashMap<String, String> values = new HashMap<>();
         values.put("hello", "20");
         values.put("jordan", "93");
+        values.put("Jacob", "1997");
+        values.put("jorda", "935");
+        values.put("jord", "934");
+        values.put("jor", "933");
+        values.put("jo", "932");
+        values.put("hell", "20");
+        values.put("hel", "20");
+        values.put("he", "206");
+        values.put("helo", "205");
+        values.put("heo", "204");
+        values.put("hllo", "202");
+
+
+
+
 
         List<HashMap<String, String>> listItems = new ArrayList<>();
         SimpleAdapter adapter = new SimpleAdapter(this, listItems, R.layout.list_items,
