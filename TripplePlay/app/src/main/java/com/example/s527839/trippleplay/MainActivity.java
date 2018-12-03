@@ -1,6 +1,8 @@
 package com.example.s527839.trippleplay;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
     Button htpBTN;
     private static final int request_code = 1;
 
-    public static int user1;
-    public static int user2;
+    public static int user1 = 0;
+    public static int user2 = 0;
     public static String username1;
     public static String username2;
     @Override
@@ -38,10 +40,18 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent ini = new Intent(MainActivity.this, HangmanActivity.class);
 
+                SharedPreferences sp = getSharedPreferences("Name", Context.MODE_PRIVATE);
+                SharedPreferences.Editor edit = sp.edit();
                 EditText playerName1 = findViewById(R.id.player1name);
                 EditText playerName2 = findViewById(R.id.player2name);
                 username1 = playerName1.getText().toString();
                 username2 = playerName2.getText().toString();
+
+                edit.putString("Name", username1);
+                edit.putString("Name", username2);
+                edit.putInt("Score", user1);
+                edit.putInt("Score", user2);
+                edit.commit();
 
                 // Toast.makeText(MainActivity.this, "Time to Tripple Play!", Toast.LENGTH_SHORT).show();
                 startActivity(ini);

@@ -261,7 +261,9 @@ public class HangmanActivity extends AppCompatActivity
 
     public void gameResult(){
         Toast.makeText(HangmanActivity.this,winningPlayer + " wins!",Toast.LENGTH_LONG).show();
+
         /*if (1) {
+
             result = winningPlayer;
             MainActivity.user1++;
         }

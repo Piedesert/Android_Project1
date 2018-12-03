@@ -1,6 +1,8 @@
 package com.example.s527839.trippleplay;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -671,7 +673,15 @@ public class C4Activity extends AppCompatActivity implements View.OnClickListene
                 row4col4.setImageResource(R.drawable.orangesquare);
             }
             MainActivity.user1++;
-            if (MainActivity.user1 == 3) {
+            SharedPreferences sp = getSharedPreferences("Name", Context.MODE_PRIVATE);
+            SharedPreferences.Editor edit = sp.edit();
+            int user1Score = sp.getInt("Score", 0);
+            user1Score++;
+            edit.putInt("Score", user1Score);
+            edit.commit();
+
+
+            if (MainActivity.user1 == 5) {
                 Intent ini = new Intent(C4Activity.this, ScoreActivity.class);
                 Toast.makeText(C4Activity.this, "Rock, Paper, Scissors", Toast.LENGTH_SHORT).show();
                 Intent scoreSend = new Intent(C4Activity.this, ScoreActivity.class);
@@ -907,6 +917,13 @@ public class C4Activity extends AppCompatActivity implements View.OnClickListene
                 row4col4.setImageResource(R.drawable.purplesquare);
             }
             MainActivity.user2++;
+            SharedPreferences sp = getSharedPreferences("Name", Context.MODE_PRIVATE);
+            SharedPreferences.Editor edit = sp.edit();
+            int user2Score = sp.getInt("Score", 0);
+            user2Score++;
+            edit.putInt("Score", user2Score);
+            edit.commit();
+
             if (MainActivity.user2 == 3) {
                 Intent ini = new Intent(C4Activity.this, ScoreActivity.class);
                 Intent scoreSend = new Intent(C4Activity.this, ScoreActivity.class);

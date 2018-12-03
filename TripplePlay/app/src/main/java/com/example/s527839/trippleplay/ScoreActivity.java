@@ -1,6 +1,8 @@
 package com.example.s527839.trippleplay;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -40,12 +42,20 @@ public class ScoreActivity extends AppCompatActivity {
         setContentView(R.layout.activity_score);
 
         ListView resultsListView = (ListView) findViewById(R.id.list);
-
+        SharedPreferences sp = getSharedPreferences("Name", Context.MODE_PRIVATE);
+        SharedPreferences.Editor edit = sp.edit();
+        int user2Score = sp.getInt("Score", 0);
+        String name1 = sp.getString("Name", "");
+        String userScore2 = String.valueOf(user2Score);
+        String user1 = MainActivity.username1;
+        String user2 = MainActivity.username2;
+        String user1S = String.valueOf(MainActivity.user1);
+        String user2S = String.valueOf(MainActivity.user2);
         HashMap<String, String> values = new HashMap<>();
-        values.put("hello", "20");
-        values.put("jordan", "93");
-        values.put("Jacob", "1997");
-        values.put("jorda", "935");
+        //values.put(name1, userScore2);
+        values.put(user1, user1S);
+        values.put(user2, user2S);
+        /*values.put("jorda", "935");
         values.put("jord", "934");
         values.put("jor", "933");
         values.put("jo", "932");
@@ -55,7 +65,7 @@ public class ScoreActivity extends AppCompatActivity {
         values.put("helo", "205");
         values.put("heo", "204");
         values.put("hllo", "202");
-
+        */
 
 
 

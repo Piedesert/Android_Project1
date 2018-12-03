@@ -187,6 +187,7 @@ public class rpsActivity extends AppCompatActivity {
             user2_scissors.setEnabled(false);
             user2_rock.setEnabled(false);
             user2_paper.setEnabled(false);
+            MainActivity.user1++;
 
         }
         if (select1 == 1 && select2 == 3){
@@ -197,6 +198,7 @@ public class rpsActivity extends AppCompatActivity {
             user2_scissors.setEnabled(false);
             user2_rock.setEnabled(false);
             user2_paper.setEnabled(false);
+            MainActivity.user2++;
         }
         if (select1 == 2 && select2 == 1){
             message.setText(MainActivity.username2 + " Wins. Rock beats Scissors");
@@ -206,6 +208,7 @@ public class rpsActivity extends AppCompatActivity {
             user2_scissors.setEnabled(false);
             user2_rock.setEnabled(false);
             user2_paper.setEnabled(false);
+            MainActivity.user2++;
         }
         if (select1 == 2 && select2 == 2){
             message.setText("Tie. Both Players chose Scissors");
@@ -224,6 +227,7 @@ public class rpsActivity extends AppCompatActivity {
             user2_scissors.setEnabled(false);
             user2_rock.setEnabled(false);
             user2_paper.setEnabled(false);
+            MainActivity.user1++;
         }
         if (select1 == 3 && select2 == 1){
             message.setText(MainActivity.username1 + " Wins. Paper beats Rock");
@@ -233,6 +237,7 @@ public class rpsActivity extends AppCompatActivity {
             user2_scissors.setEnabled(false);
             user2_rock.setEnabled(false);
             user2_paper.setEnabled(false);
+            MainActivity.user1++;
         }
         if (select1 == 3 && select2 == 2){
             message.setText(MainActivity.username2 + " Wins. Scissors beats Paper");
@@ -242,6 +247,7 @@ public class rpsActivity extends AppCompatActivity {
             user2_scissors.setEnabled(false);
             user2_rock.setEnabled(false);
             user2_paper.setEnabled(false);
+            MainActivity.user2++;
         }
         if (select1 == 3 && select2 == 3){
             message.setText("Tie. Both Players chose Paper");
@@ -251,6 +257,15 @@ public class rpsActivity extends AppCompatActivity {
             user2_scissors.setEnabled(false);
             user2_rock.setEnabled(false);
             user2_paper.setEnabled(false);
+        }
+        if (MainActivity.user1 == 5 || MainActivity.user2 == 5){
+            Intent ini = new Intent(rpsActivity.this, ScoreActivity.class);
+            //Toast.makeText(rpsActivity.this, "Rock, Paper, Scissors", Toast.LENGTH_SHORT).show();
+            Intent scoreSend = new Intent(rpsActivity.this, ScoreActivity.class);
+            scoreSend.putExtra("c4Result", result);
+            setResult(2, scoreSend);
+            finish();
+            startActivity(ini);
         }
     }
 
