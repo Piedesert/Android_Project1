@@ -716,6 +716,10 @@
         "source": "C:\\Users\\jzech\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\ad7c1aed26fb4de47afcddb221c4b61f\\res\\drawable-v21\\notification_action_background.xml"
     },
     {
+        "merged": "C:\\Users\\jzech\\Projects\\ProjectTripplePlay\\Android_Project1\\TripplePlay\\app\\build\\intermediates\\res\\merged\\debug\\layout_list_items.xml.flat",
+        "source": "C:\\Users\\jzech\\Projects\\ProjectTripplePlay\\Android_Project1\\TripplePlay\\app\\src\\main\\res\\layout\\list_items.xml"
+    },
+    {
         "merged": "C:\\Users\\jzech\\Projects\\ProjectTripplePlay\\Android_Project1\\TripplePlay\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_expanded_menu_layout.xml.flat",
         "source": "C:\\Users\\jzech\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\6334a8dcd8f126741c44ca744f7890c4\\res\\layout\\abc_expanded_menu_layout.xml"
     },

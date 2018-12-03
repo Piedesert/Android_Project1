@@ -5,11 +5,22 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.TwoLineListItem;
 
 import com.example.s527839.trippleplay.R;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 public class ScoreActivity extends AppCompatActivity {
 
@@ -21,15 +32,34 @@ public class ScoreActivity extends AppCompatActivity {
     int cResult;
     int rResult;
     Button resetBTN;
-    TextView player1TV;
-    TextView player2TV;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score);
 
-        if(MainActivity.user1 == 1){
+        ListView resultsListView = (ListView) findViewById(R.id.list);
+
+        HashMap<String, String> values = new HashMap<>();
+        values.put("hello", "20");
+        values.put("jordan", "93");
+
+        List<HashMap<String, String>> listItems = new ArrayList<>();
+        SimpleAdapter adapter = new SimpleAdapter(this, listItems, R.layout.list_items,
+                new String[]{"firstLine", "SecondLine"}, new int[]{R.id.text1, R.id.text2});
+        Iterator aIter = values.entrySet().iterator();
+        while(aIter.hasNext()){
+            HashMap<String, String> results = new HashMap<>();
+            Map.Entry putter = (Map.Entry)aIter.next();
+            results.put("firstLine", putter.getKey().toString());
+            results.put("SecondLine", putter.getValue().toString());
+            listItems.add(results);
+        }
+
+        resultsListView.setAdapter(adapter);
+
+        if (MainActivity.user1 == 1) {
             Toast.makeText(this, "User 1 Wins!", Toast.LENGTH_SHORT).show();
         }
         resetBTN = (Button) findViewById(R.id.resetBTN);
@@ -44,19 +74,19 @@ public class ScoreActivity extends AppCompatActivity {
             }
         });
 
-        player1TV = findViewById(R.id.player1TV);
-        player2TV = findViewById(R.id.player2TV);
+        //player1TV = findViewById(R.id.player1TV);
+        //player2TV = findViewById(R.id.player2TV);
         String points1 = Integer.toString(MainActivity.user1);
         String points2 = Integer.toString(MainActivity.user2);
         String player1String = MainActivity.username1 + " got " + points1 + " points";
         String player2String = MainActivity.username2 + " got " + points2 + " points";
-        player1TV.setText(player1String);
-        player2TV.setText(player2String);
+        // player1TV.setText(player1String);
+        //player2TV.setText(player2String);
 
 
     }
 
-    public void onClickSS(View v){
+    public void onClickSS(View v) {
         Intent ini = new Intent(v.getContext(), MainActivity.class);
         startActivityForResult(ini, 1);
     }
@@ -64,69 +94,65 @@ public class ScoreActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == 1){
+        if (resultCode == 1) {
             String hangmanResult = data.getStringExtra("hangmanResult");
             hResult = Integer.parseInt(hangmanResult);
-        }
-
-        else if (resultCode == 2){
+        } else if (resultCode == 2) {
             String c4Result = data.getStringExtra("c4Result");
             cResult = Integer.parseInt(c4Result);
-        }
-
-        else if (resultCode == 3){
+        } else if (resultCode == 3) {
             String rpsResult = data.getStringExtra("rpsResult");
             rResult = Integer.parseInt(rpsResult);
         }
     }
 
-    public void hangmanScore(){
+    public void hangmanScore() {
         switch (hResult) {
             case 1:
-                playerOneScore ++;
+                playerOneScore++;
                 break;
             case 2:
-                playerTwoScore ++;
+                playerTwoScore++;
                 break;
             case 3:
-                playerThreeScore ++;
+                playerThreeScore++;
                 break;
             case 4:
-                playerFourScore ++;
+                playerFourScore++;
                 break;
         }
     }
 
-    public void c4Score(){
+    public void c4Score() {
         switch (cResult) {
             case 1:
-                playerOneScore ++;
+                playerOneScore++;
                 break;
             case 2:
-                playerTwoScore ++;
+                playerTwoScore++;
                 break;
             case 3:
-                playerThreeScore ++;
+                playerThreeScore++;
                 break;
             case 4:
-                playerFourScore ++;
+                playerFourScore++;
                 break;
         }
     }
 
-    public void rpsScore(){
+    public void rpsScore() {
         switch (rResult) {
             case 1:
-                playerOneScore ++;
+                playerOneScore++;
                 break;
             case 2:
-                playerTwoScore ++;
+                playerTwoScore++;
                 break;
             case 3:
-                playerThreeScore ++;
+                playerThreeScore++;
                 break;
             case 4:
-                playerFourScore ++;
+                playerFourScore++;
                 break;
         }
     }
