@@ -15,10 +15,6 @@
     <string name="guessBTN">Guess</string>
     <string name="htpBTN">How To Play</string>
     <string name="titleTV">Hangman</string>
-    <string name="guessSpace0TV">_</string>
-    <string name="guessSpace1TV">_</string>
-    <string name="guessSpace2TV">_</string>
-    <string name="guessSpace3TV">_</string>
-    <string name="guessSpace4TV">_</string>
     <string name="guessWord_hint">Hang the man with one word</string>
+    <string name="spaceTV">_</string>
 </resources>

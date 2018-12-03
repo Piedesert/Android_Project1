@@ -51,6 +51,7 @@
 
     <EditText
         android:id="@+id/guessET"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -60,13 +61,15 @@
         android:ems="10"
         android:hint="@string/guessLetterET"
         android:importantForAutofill="no"
-        android:inputType="textPersonName"
+        android:maxLength="1"
+        android:textAllCaps="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.189"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.902" />
+        app:layout_constraintVertical_bias="0.902"
+        android:inputType="" />
 
     <Button
         android:id="@+id/nextBTN"
@@ -101,49 +104,15 @@
         android:id="@+id/guessWordLayout"
         android:layout_width="385dp"
         android:layout_height="82dp"
+        android:gravity="clip_horizontal"
         android:orientation="horizontal"
+        android:padding="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.734">
-
-        <!--<TextView
-            android:id="@+id/guessSpace0TV"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/guessSpace0TV" />
-
-        <TextView
-            android:id="@+id/guessSpace1TV"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/guessSpace1TV" />
-
-        <TextView
-            android:id="@+id/guessSpace2TV"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/guessSpace2TV" />
-
-        <TextView
-            android:id="@+id/guessSpace3TV"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/guessSpace3TV" />
-
-        <TextView
-            android:id="@+id/guessSpace4TV"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/guessSpace4TV" />-->
-
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

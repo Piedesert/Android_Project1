@@ -1,5 +1,6 @@
 package com.example.s527839.trippleplay;
 
+import android.graphics.Color;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.content.Intent;
@@ -7,25 +8,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.app.ActionBar.*;
 import android.util.Log;
-import android.view.LayoutInflater;
+import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.example.s527839.trippleplay.R;
-import com.example.s527839.trippleplay.htpActivity;
-import com.example.s527839.trippleplay.Hangman0Frag;
-import com.example.s527839.trippleplay.Hangman1Frag;
-import com.example.s527839.trippleplay.Hangman2Frag;
-import com.example.s527839.trippleplay.Hangman3Frag;
-import com.example.s527839.trippleplay.Hangman4Frag;
-import com.example.s527839.trippleplay.Hangman5Frag;
-import com.example.s527839.trippleplay.Hangman6Frag;
-
-import org.w3c.dom.Text;
-import java.util.Set;
 
 public class HangmanActivity extends AppCompatActivity
         implements WordInput.setWord
@@ -57,6 +47,9 @@ public class HangmanActivity extends AppCompatActivity
     Button htpBTN;
     Button guessBTN;
     private static final int request_code = 1;
+
+    public String newWord;
+    public TextView[] spacesTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -142,9 +135,13 @@ public class HangmanActivity extends AppCompatActivity
         guessBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //if (guessMade())
-                Toast.makeText(HangmanActivity.this, "WRONG", Toast.LENGTH_SHORT).show();
-                swapNoose();
+                if (getGuess(newWord)){
+                    Toast.makeText(HangmanActivity.this, "CORRECT", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(HangmanActivity.this, "WRONG", Toast.LENGTH_SHORT).show();
+                    swapNoose();
+                }
             }
         });
 
@@ -153,6 +150,9 @@ public class HangmanActivity extends AppCompatActivity
     public void reset(){
         onFragment = 1;
         swapNoose();
+        // Input a new guees word
+        WordInput input = new WordInput();
+        input.show(getSupportFragmentManager(),"New Word input");
     } // reset
 
     @Override
@@ -209,7 +209,7 @@ public class HangmanActivity extends AppCompatActivity
             case 6: t.hide(h5IMG);
                     t.show(h6IMG);
                     t.commit();
-                    //gameOver();
+                    gameResult();
                     break;
 
             default: break;
@@ -221,20 +221,47 @@ public class HangmanActivity extends AppCompatActivity
     @Override
     public void setGuessWord(String input) {
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.guessWordLayout);
-        char[] inputArray = input.toCharArray();
-        for (int i = 0; i < inputArray.length; i++) {
-            TextView spaceTV = new TextView(this);
-            spaceTV.setId((int)System.currentTimeMillis());
-            spaceTV.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
-            spaceTV.setText(String.valueOf(inputArray[i]));
-            linearLayout.addView(spaceTV);
-        }
 
+        // creating LayoutParams
+        LayoutParams lpView = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+
+        newWord = input;
+        int amount = 50;
+        char[] inputArray = input.toCharArray();
+        spacesTV = new TextView[inputArray.length];
+        for (int i = 0; i < inputArray.length; i++) {
+            lpView.leftMargin = amount += 10;
+            TextView spaceTV = new TextView(this, null, R.attr.guessWordStyle);
+            spaceTV.setId(i);
+            spaceTV.setLayoutParams(lpView);
+            spaceTV.setText("_");
+            spaceTV.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+            linearLayout.addView(spaceTV, lpView);
+            spacesTV[i] = spaceTV;
+        }
     }
-/*
+
+    public boolean getGuess(String guessWord) {
+        boolean correct = false;
+        EditText input = (EditText) findViewById(R.id.guessET);
+        String str = input.getText().toString();
+        char[] userGuess = str.toCharArray();
+        char[] inputArray = guessWord.toCharArray();
+
+        for (int i = 0; i < userGuess.length; i++) {
+            for (int j = 0; j < inputArray.length; j++) {
+                if (Character.toUpperCase(userGuess[i]) == Character.toUpperCase(inputArray[j])) {
+                    spacesTV[j].setText(String.valueOf(userGuess[i]).toUpperCase());
+                    correct = true;
+                }
+            }
+        }
+        return correct;
+    }
+
     public void gameResult(){
         Toast.makeText(HangmanActivity.this,winningPlayer + " wins!",Toast.LENGTH_LONG).show();
-        if (1) {
+        /*if (1) {
             result = winningPlayer;
             MainActivity.user1++;
         }
@@ -242,7 +269,7 @@ public class HangmanActivity extends AppCompatActivity
         if (2) {
             result = winningPlayer;
             MainActivity.user2++;
-        }
+        }*/
 
         if(MainActivity.user1 == 3){
             Intent ini = new Intent(HangmanActivity.this, ScoreActivity.class);
@@ -262,5 +289,5 @@ public class HangmanActivity extends AppCompatActivity
             startActivity(ini);
         }
     } // gameResult
-*/
+
 }
