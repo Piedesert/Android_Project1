@@ -24,7 +24,7 @@
         android:id="@+id/resetBTN"
         android:layout_width="138dp"
         android:layout_height="79dp"
-        android:text="RESET"
+        android:text="@string/scoreresetBTN"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.882"

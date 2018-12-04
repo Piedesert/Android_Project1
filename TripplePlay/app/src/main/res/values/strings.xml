@@ -18,4 +18,5 @@
     <string name="guessWord_hint">Hang the man with one word</string>
     <string name="spaceTV">_</string>
     <string name="resetBTN">Reset</string>
+    <string name="scoreresetBTN">RESET</string>
 </resources>
