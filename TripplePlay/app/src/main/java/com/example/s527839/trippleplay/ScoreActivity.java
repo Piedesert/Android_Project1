@@ -84,8 +84,11 @@ public class ScoreActivity extends AppCompatActivity {
 
         resultsListView.setAdapter(adapter);
 
-        if (MainActivity.user1 == 1) {
-            Toast.makeText(this, "User 1 Wins!", Toast.LENGTH_SHORT).show();
+        if (MainActivity.user1 == 5) {
+            Toast.makeText(this, MainActivity.username1 + " Wins!", Toast.LENGTH_LONG).show();
+        }
+        if (MainActivity.user2 == 5) {
+            Toast.makeText(this, MainActivity.username2 + " Wins!", Toast.LENGTH_LONG).show();
         }
         resetBTN = (Button) findViewById(R.id.resetBTN);
 
@@ -131,55 +134,5 @@ public class ScoreActivity extends AppCompatActivity {
         }
     }
 
-    public void hangmanScore() {
-        switch (hResult) {
-            case 1:
-                playerOneScore++;
-                break;
-            case 2:
-                playerTwoScore++;
-                break;
-            case 3:
-                playerThreeScore++;
-                break;
-            case 4:
-                playerFourScore++;
-                break;
-        }
-    }
-
-    public void c4Score() {
-        switch (cResult) {
-            case 1:
-                playerOneScore++;
-                break;
-            case 2:
-                playerTwoScore++;
-                break;
-            case 3:
-                playerThreeScore++;
-                break;
-            case 4:
-                playerFourScore++;
-                break;
-        }
-    }
-
-    public void rpsScore() {
-        switch (rResult) {
-            case 1:
-                playerOneScore++;
-                break;
-            case 2:
-                playerTwoScore++;
-                break;
-            case 3:
-                playerThreeScore++;
-                break;
-            case 4:
-                playerFourScore++;
-                break;
-        }
-    }
 
 }
