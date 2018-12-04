@@ -1,5 +1,7 @@
 package com.example.s527839.trippleplay;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -17,13 +19,15 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Random;
+
 public class HangmanActivity extends AppCompatActivity
         implements WordInput.setWord
 {
-
-    String player;
-    String winningPlayer;
     String result;
+    int player;
+    int winningPlayer;
+    int correctcount = 0;
 // Hangman
 
     private static String SAVED_ONFRAGMENT = "OnFragment";
@@ -43,11 +47,13 @@ public class HangmanActivity extends AppCompatActivity
     private Hangman5Frag h5IMG;
     private Hangman6Frag h6IMG;
 
+    Button resetBTN;
     Button nextBTN;
     Button htpBTN;
     Button guessBTN;
     private static final int request_code = 1;
 
+    int allowedguess;
     public String newWord;
     public TextView[] spacesTV;
 
@@ -56,9 +62,21 @@ public class HangmanActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hangman);
 
-        // Input a new guees word
+        // Determine which user is to be guessing,
+        final int random = new Random().nextInt((2-1) + 1) + 1;
+        player = random;
+        if (player == 1) {
+            Toast.makeText(HangmanActivity.this,MainActivity.username1 + " Will attempt to hang the man",Toast.LENGTH_LONG).show();
+            Toast.makeText(HangmanActivity.this,MainActivity.username1 + " make a one to six letter word",Toast.LENGTH_LONG).show();
+        } else {
+            player = 2;
+            Toast.makeText(HangmanActivity.this,MainActivity.username2 + " Will attempt to hang the man",Toast.LENGTH_LONG).show();
+            Toast.makeText(HangmanActivity.this,MainActivity.username2 + " make a one to six letter word",Toast.LENGTH_LONG).show();
+        }
+
+        // Input a new guess word
         WordInput input = new WordInput();
-        input.show(getSupportFragmentManager(),"New Word input");
+        input.show(getSupportFragmentManager(),"New word input");
 
         if(savedInstanceState!=null){
             // We are being restored, so we need to take care of our instance variables.
@@ -104,6 +122,7 @@ public class HangmanActivity extends AppCompatActivity
         t.commit();
 
         nextBTN = (Button) findViewById(R.id.nextBTN);
+        resetBTN = (Button) findViewById(R.id.resetBTN);
         htpBTN = (Button) findViewById(R.id.htpBTN);
         guessBTN = (Button) findViewById(R.id.guessBTN);
 
@@ -113,7 +132,7 @@ public class HangmanActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent ini = new Intent(HangmanActivity.this, C4Activity.class);
                 Toast.makeText(HangmanActivity.this, "Connect Four", Toast.LENGTH_SHORT).show();
-                // gameResult();
+                gameResult();
                 Intent scoreSend = new Intent(HangmanActivity.this, ScoreActivity.class);
                 scoreSend.putExtra("hangmanResult", result);
                 setResult(1,scoreSend);
@@ -131,12 +150,23 @@ public class HangmanActivity extends AppCompatActivity
                 startActivity(ini);
             }
         });
+
         // Start htpActivity (How To Play)
         guessBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if (getGuess(newWord)){
                     Toast.makeText(HangmanActivity.this, "CORRECT", Toast.LENGTH_SHORT).show();
+                    correctcount++;
+                    if(allowedguess == correctcount) {
+                        if (player == 1) { // if player 1 was guessing, player 2 won
+                            winningPlayer = 2;
+                        } else {
+                            winningPlayer = 1; // else player 2 was guessing and lost
+                        }
+                        gameResult();
+                    }
                 }
                 else {
                     Toast.makeText(HangmanActivity.this, "WRONG", Toast.LENGTH_SHORT).show();
@@ -145,14 +175,21 @@ public class HangmanActivity extends AppCompatActivity
             }
         });
 
+        // Start htpActivity (How To Play)
+        resetBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reset();
+            }
+        });
+
     } // onCreate
 
     public void reset(){
-        onFragment = 1;
-        swapNoose();
-        // Input a new guees word
-        WordInput input = new WordInput();
-        input.show(getSupportFragmentManager(),"New Word input");
+        Intent ini = getIntent();
+        correctcount = 0;
+        finish();
+        startActivity(ini);
     } // reset
 
     @Override
@@ -176,6 +213,12 @@ public class HangmanActivity extends AppCompatActivity
         FragmentTransaction t = getSupportFragmentManager().beginTransaction();
 
         switch (onFragment) {
+            case 0: t.hide(h6IMG);
+                    t.show(h0IMG);
+                    t.commit();
+                    onFragment = 1;
+                    break;
+
             case 1: t.hide(h0IMG);
                     t.show(h1IMG);
                     t.commit();
@@ -208,11 +251,13 @@ public class HangmanActivity extends AppCompatActivity
 
             case 6: t.hide(h5IMG);
                     t.show(h6IMG);
-                    t.commit();
+                    winningPlayer = player;
                     gameResult();
+                    t.commit();
                     break;
 
-            default: break;
+            default:
+                break;
         }
         Log.d("onFragment: ", "Hangman " + onFragment + "/6");
 
@@ -228,6 +273,8 @@ public class HangmanActivity extends AppCompatActivity
         newWord = input;
         int amount = 50;
         char[] inputArray = input.toCharArray();
+        // Determine how many correct guesses needed to win
+        allowedguess = inputArray.length;
         spacesTV = new TextView[inputArray.length];
         for (int i = 0; i < inputArray.length; i++) {
             lpView.leftMargin = amount += 10;
@@ -260,20 +307,31 @@ public class HangmanActivity extends AppCompatActivity
     }
 
     public void gameResult(){
-        Toast.makeText(HangmanActivity.this,winningPlayer + " wins!",Toast.LENGTH_LONG).show();
 
-        /*if (1) {
-
-            result = winningPlayer;
+        if (winningPlayer == 1) {
             MainActivity.user1++;
+            Toast.makeText(HangmanActivity.this,MainActivity.username1 + " won",Toast.LENGTH_LONG).show();
+            SharedPreferences sp = getSharedPreferences("Name", Context.MODE_PRIVATE);
+            SharedPreferences.Editor edit = sp.edit();
+            int user1Score = sp.getInt("Score", 0);
+            user1Score++;
+            edit.putInt("Score", user1Score);
+            edit.commit();
         }
 
-        if (2) {
-            result = winningPlayer;
+        if (winningPlayer == 2) {
             MainActivity.user2++;
-        }*/
+            Toast.makeText(HangmanActivity.this,MainActivity.username2 + " won",Toast.LENGTH_LONG).show();
+            SharedPreferences sp = getSharedPreferences("Name", Context.MODE_PRIVATE);
+            SharedPreferences.Editor edit = sp.edit();
+            int user2Score = sp.getInt("Score", 0);
+            user2Score++;
+            edit.putInt("Score", user2Score);
+            edit.commit();
+        }
 
         if(MainActivity.user1 == 3){
+            Toast.makeText(HangmanActivity.this,MainActivity.username1 + " wins!",Toast.LENGTH_LONG).show();
             Intent ini = new Intent(HangmanActivity.this, ScoreActivity.class);
             Intent scoreSend = new Intent(HangmanActivity.this, ScoreActivity.class);
             scoreSend.putExtra("Hangman Result: ", result);
@@ -283,6 +341,7 @@ public class HangmanActivity extends AppCompatActivity
         }
 
         if(MainActivity.user2 == 3){
+            Toast.makeText(HangmanActivity.this,MainActivity.username2 + " wins!",Toast.LENGTH_LONG).show();
             Intent ini = new Intent(HangmanActivity.this, ScoreActivity.class);
             Intent scoreSend = new Intent(HangmanActivity.this, ScoreActivity.class);
             scoreSend.putExtra("Hangman Result: ", result);
