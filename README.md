@@ -1,5 +1,5 @@
 # triPPlePlay
-<p>Basic description: Three games for multiple players, best two out of three wins!</p>
+<p>Basic description: Three games for two players, best of the three games wins!</p>
 
 <p>Nick Morrow, Luke Carlson, Jordan Zech, and Colton Steeve App name triPPlePlay: </p>
 
